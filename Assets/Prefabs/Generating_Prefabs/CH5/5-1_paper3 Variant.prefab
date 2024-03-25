@@ -1,0 +1,107 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &80700340986041703
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1293709896597983176, guid: 73c2dc6b5470a034b8c92c0a3727135a, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1293709896597983176, guid: 73c2dc6b5470a034b8c92c0a3727135a, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1293709896597983176, guid: 73c2dc6b5470a034b8c92c0a3727135a, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1293709896597983176, guid: 73c2dc6b5470a034b8c92c0a3727135a, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1293709896597983176, guid: 73c2dc6b5470a034b8c92c0a3727135a, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.10019404
+      objectReference: {fileID: 0}
+    - target: {fileID: 1293709896597983176, guid: 73c2dc6b5470a034b8c92c0a3727135a, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1293709896597983176, guid: 73c2dc6b5470a034b8c92c0a3727135a, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.99496794
+      objectReference: {fileID: 0}
+    - target: {fileID: 1293709896597983176, guid: 73c2dc6b5470a034b8c92c0a3727135a, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1293709896597983176, guid: 73c2dc6b5470a034b8c92c0a3727135a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1293709896597983176, guid: 73c2dc6b5470a034b8c92c0a3727135a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 168.499
+      objectReference: {fileID: 0}
+    - target: {fileID: 1293709896597983176, guid: 73c2dc6b5470a034b8c92c0a3727135a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1293709896597983179, guid: 73c2dc6b5470a034b8c92c0a3727135a, type: 3}
+      propertyPath: m_Name
+      value: 5-1_paper3 Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 1293709896597983182, guid: 73c2dc6b5470a034b8c92c0a3727135a, type: 3}
+      propertyPath: m_InteractionManager
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1293709896597983182, guid: 73c2dc6b5470a034b8c92c0a3727135a, type: 3}
+      propertyPath: m_SelectExited.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1293709896597983182, guid: 73c2dc6b5470a034b8c92c0a3727135a, type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1293709896597983182, guid: 73c2dc6b5470a034b8c92c0a3727135a, type: 3}
+      propertyPath: m_SelectExited.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1293709896597983182, guid: 73c2dc6b5470a034b8c92c0a3727135a, type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1293709896597983182, guid: 73c2dc6b5470a034b8c92c0a3727135a, type: 3}
+      propertyPath: m_SelectExited.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1293709896597983182, guid: 73c2dc6b5470a034b8c92c0a3727135a, type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1293709896597983182, guid: 73c2dc6b5470a034b8c92c0a3727135a, type: 3}
+      propertyPath: m_SelectExited.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1293709896597983182, guid: 73c2dc6b5470a034b8c92c0a3727135a, type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1293709896597983182, guid: 73c2dc6b5470a034b8c92c0a3727135a, type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PickPaper
+      objectReference: {fileID: 0}
+    - target: {fileID: 1293709896597983182, guid: 73c2dc6b5470a034b8c92c0a3727135a, type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: SaveSystemCh2, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1293709896597983182, guid: 73c2dc6b5470a034b8c92c0a3727135a, type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 73c2dc6b5470a034b8c92c0a3727135a, type: 3}

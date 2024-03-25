@@ -1,0 +1,95 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &8940517482393051085
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 8643001367764560561, guid: 75223ed1529b2714a9150288480f724b, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8643001367764560561, guid: 75223ed1529b2714a9150288480f724b, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8643001367764560561, guid: 75223ed1529b2714a9150288480f724b, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8643001367764560561, guid: 75223ed1529b2714a9150288480f724b, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8643001367764560561, guid: 75223ed1529b2714a9150288480f724b, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.750964
+      objectReference: {fileID: 0}
+    - target: {fileID: 8643001367764560561, guid: 75223ed1529b2714a9150288480f724b, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.35018027
+      objectReference: {fileID: 0}
+    - target: {fileID: 8643001367764560561, guid: 75223ed1529b2714a9150288480f724b, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.5073922
+      objectReference: {fileID: 0}
+    - target: {fileID: 8643001367764560561, guid: 75223ed1529b2714a9150288480f724b, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.23660088
+      objectReference: {fileID: 0}
+    - target: {fileID: 8643001367764560561, guid: 75223ed1529b2714a9150288480f724b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8643001367764560561, guid: 75223ed1529b2714a9150288480f724b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 38.09
+      objectReference: {fileID: 0}
+    - target: {fileID: 8643001367764560561, guid: 75223ed1529b2714a9150288480f724b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8643001367764560564, guid: 75223ed1529b2714a9150288480f724b, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8643001367764560565, guid: 75223ed1529b2714a9150288480f724b, type: 3}
+      propertyPath: m_InteractionManager
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8643001367764560565, guid: 75223ed1529b2714a9150288480f724b, type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8643001367764560565, guid: 75223ed1529b2714a9150288480f724b, type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8643001367764560565, guid: 75223ed1529b2714a9150288480f724b, type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8643001367764560565, guid: 75223ed1529b2714a9150288480f724b, type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8643001367764560565, guid: 75223ed1529b2714a9150288480f724b, type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PickPaper
+      objectReference: {fileID: 0}
+    - target: {fileID: 8643001367764560565, guid: 75223ed1529b2714a9150288480f724b, type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: SaveSystemCh2, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 8643001367764560565, guid: 75223ed1529b2714a9150288480f724b, type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 8643001367764560574, guid: 75223ed1529b2714a9150288480f724b, type: 3}
+      propertyPath: m_Name
+      value: paper4 Variant
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 75223ed1529b2714a9150288480f724b, type: 3}
