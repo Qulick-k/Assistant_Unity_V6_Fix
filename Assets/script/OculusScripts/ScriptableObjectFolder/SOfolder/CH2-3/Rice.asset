@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06e591acdaa28ac49b081fcd1fc346b8, type: 3}
+  m_Name: Rice
+  m_EditorClassIdentifier: 
+  artWork: {fileID: 21300000, guid: 6bae436bc94bfcb4980fd5d1a37cd9aa, type: 3}
+  title: "5.\u7CEF\u7C73\u6F3F"
+  description: "\u7CEF\u7C73\u9664\u4E86\u505A\u70BA\u98DF\u7269\u5916\uFF0C\u4E5F\u53EF\u7528\u505A\u5EFA\u6750\u9ECF\u8457\u5291\u3002\u4EE5\u524D\u7684\u6F3F\u7CCA\u662F\u4EE5\u7CEF\u7C73\u88FD\u9020\u7684\uFF0C\u56E0\u70BA\u6C92\u6709\u5316\u5B78\u6DFB\u52A0\u7269\u6240\u4EE5\u53EF\u4EE5\u5403\u3002"
+  indexObject: 5

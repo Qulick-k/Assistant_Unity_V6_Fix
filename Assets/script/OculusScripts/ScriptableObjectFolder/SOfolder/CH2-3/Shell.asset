@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06e591acdaa28ac49b081fcd1fc346b8, type: 3}
+  m_Name: Shell
+  m_EditorClassIdentifier: 
+  artWork: {fileID: 21300000, guid: f07f3d67a62765f4f8775be57d344752, type: 3}
+  title: "6.\u86B5\u6BBC\u7070"
+  description: "\u5B89\u5E73\u5730\u5340\u5728\u8377\u862D\u6642\u671F\u5DF2\u6709\u86B5\u7070\u7522\u696D\uFF0C\u900F\u904E\u86B5\u6BBC\u71D2\u6210\u7684\u86B5\u7070\u8207\u7CEF\u7C73\u3001\u7CD6\u6F3F\u6DF7\u5408\u53EF\u88FD\u6210\u9ECF\u5408\u5291\uFF0C\u61C9\u7528\u65BC\u5EFA\u7BC9\u8207\u9020\u8239\u696D\uFF08\u6728\u8239\u7D30\u7E2B\u9ECF\u63A5\u6750\u6599\uFF09\u4E0A\u3002\u800C\u7531\u65BC\u6B64\u4E00\u7522\u696D\u7684\u767C\u5C55\uFF0C\u5B89\u5E73\u5730\u5340\u9084\u6709\u540D\u70BA\u300C\u7070\u7AAF\u5C3E\u300D\u7684\u5730\u540D\u3002"
+  indexObject: 6

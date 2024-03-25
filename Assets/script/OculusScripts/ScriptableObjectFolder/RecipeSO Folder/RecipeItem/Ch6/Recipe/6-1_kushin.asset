@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b271a778d0b92f498d53bdafb0bb898, type: 3}
+  m_Name: 6-1_kushin
+  m_EditorClassIdentifier: 
+  inputItemSOList:
+  - {fileID: 11400000, guid: ff6c6529449231b4fabc6e9bd2df4ee5, type: 2}
+  - {fileID: 11400000, guid: ba1d8bd822b7cfa4787bb65f434c8761, type: 2}
+  - {fileID: 11400000, guid: 0b642e5638ea3374f9bbe9d1fe918ec2, type: 2}
+  outputItemSO: {fileID: 11400000, guid: 7bf7b737fe01bd1468ef9897f220958c, type: 2}

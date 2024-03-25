@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06e591acdaa28ac49b081fcd1fc346b8, type: 3}
+  m_Name: Ch5-4Paper2
+  m_EditorClassIdentifier: 
+  artWork: {fileID: 21300000, guid: 44c360ef64123ac4384c74446539f004, type: 3}
+  title: "22.\u6587\u4EF6\u4E8C"
+  description: "1875\u5E74\u795E\u9748\u986F\u61C9\u5C07\u6D77\u795E\u5C01\u865F\u300E\u6577\u4EBA\u300F\u3002\u6D77\u795E\u5EDF\u5EFA\u597D\u5F8C\uFF0C\u65BD\u58EB\u6D01\u5BEB\u3008\u81FA\u90E1\u6D77\u795E\u5EDF\u52DF\u5553\u3009\u4F86\u52DF\u6B3E\u5EFA\u5EDF\u3002\u6587\u7AE0\u8AAA\u300C\u5937\u8003\u8F09\u7C4D\uFF0C\u300E\u79BA\u8662(\u3129\u02CA\u310D\u3128\u311B\u02CA)\u300F\u5C45\u6771\u6D77\u70BA\u6D77\u795E\uFF1B\u6771\u6D77\u4E4B\u795E\u66F0\u300E\u963F\u660E\u300F\uFF1B\u5510\u5929\u5BF6\u5341\u8F09\uFF0C\u4EE5\u6771\u6D77\u70BA\u300E\u5EE3\u5FB7\u738B\u300F\u300D"
+  indexObject: 22

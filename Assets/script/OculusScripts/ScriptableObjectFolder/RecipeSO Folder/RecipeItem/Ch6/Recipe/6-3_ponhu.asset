@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b271a778d0b92f498d53bdafb0bb898, type: 3}
+  m_Name: 6-3_ponhu
+  m_EditorClassIdentifier: 
+  inputItemSOList:
+  - {fileID: 11400000, guid: 7e9ae374e7490c143a69895d2bac1d03, type: 2}
+  - {fileID: 11400000, guid: d0f5f5dae2cb87b4fbafe5783c14ce32, type: 2}
+  - {fileID: 11400000, guid: da1ff16d0f515de4aa79aac30a15177d, type: 2}
+  - {fileID: 11400000, guid: 9300ac17552dffd43bc49e09667afdfa, type: 2}
+  - {fileID: 11400000, guid: 68e59c10941761f46adcaab82bb19aad, type: 2}
+  outputItemSO: {fileID: 11400000, guid: 562e7e88fd434834bbb8b17de6e5b7aa, type: 2}

@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06e591acdaa28ac49b081fcd1fc346b8, type: 3}
+  m_Name: 6-1_kushin_peopkata
+  m_EditorClassIdentifier: 
+  artWork: {fileID: 21300000, guid: 2954fa29beea65d4eb60abf8483fea0a, type: 3}
+  title: "26.\u9B41\u661F\u723A"
+  description: "\u9B41\u661F\u795E\u50CF\u91D1\u8EAB\u4E3B\u8981\u4EE5\u5B89\u91D1\u70BA\u4E3B\uFF0C\u773C\u775B\u3001\u864E\u7D0B\u88D9\u3001
+    \u96F2\u5E36\u3001\u624B\u6307\u3001\u8173\u8DBE\u53CA\u9C32\u9B5A\u7B49\u90E8\u5206\u69CB\u4EF6\uFF0C\u5247\u4EE5\u5F69\u7E6A\u984F\u6599\u756B\u8272\uFF0C\u5176\u4E2D\u773C\u775B\u756B\u6709\u660E\u986F\u7684\u77B3\u5B54\u5716\u50CF\uFF0C\u548C\u73FE\u72C0\u9ED1\u8272\u6A23\u614B\u5DEE\u7570\u9817\u5927\uFF0C\u6B64\u5916\uFF0C\u9B41\u661F\u723A\u901A\u5E38\u653E\u5728\u5C55\u793A\u6AC3\u4E2D\u9593\u3002"
+  indexObject: 26

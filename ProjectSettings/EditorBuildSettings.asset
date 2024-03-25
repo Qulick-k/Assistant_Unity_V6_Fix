@@ -1,0 +1,58 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1045 &1
+EditorBuildSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Lobby.unity
+    guid: 409c1dca6caf1c340ab5400aca02f85d
+  - enabled: 1
+    path: Assets/Scenes/lesson2.unity
+    guid: 9fc0d4010bbf28b4594072e72b8655ab
+  - enabled: 1
+    path: Assets/Scenes/2-1.unity
+    guid: 90c2a840d3bda0e4da3182cc45403213
+  - enabled: 1
+    path: Assets/Scenes/2-2.unity
+    guid: 4a01090bc6eecfd40aaf6044fb3e84e9
+  - enabled: 1
+    path: Assets/Scenes/2-3.unity
+    guid: 215debed070f3704f81f9fb599fb794c
+  - enabled: 1
+    path: Assets/Scenes/2-4.unity
+    guid: 93a21046973ef244d981e34336e3e302
+  - enabled: 1
+    path: Assets/Scenes/Chapter3_ChooseArea_Scene.unity
+    guid: f92400457311ee34aadc03af6ba03769
+  - enabled: 1
+    path: Assets/Scenes/Chapter3_Zeelandia_Scene.unity
+    guid: d0f3d2c2ffcac894d9ae9dc30335fa6a
+  - enabled: 1
+    path: Assets/Scenes/scenes4.unity
+    guid: 1e9b69b93a6594945938c0b1202530b8
+  - enabled: 1
+    path: Assets/Scenes/Lesson5-1.unity
+    guid: e92d1281a407e4642a22425ce6ea6c7e
+  - enabled: 1
+    path: Assets/Scenes/Lesson5-2.unity
+    guid: 88f1b346a219a02448349da0cd228580
+  - enabled: 1
+    path: Assets/Scenes/Lesson5-3.unity
+    guid: efc3f747694cd1f42ad458c52e49e94d
+  - enabled: 1
+    path: Assets/Scenes/Lesson5-4.unity
+    guid: a4d39ff54dc776147a9b49dfd9aae15d
+  - enabled: 1
+    path: Assets/Scenes/lesson6_1.unity
+    guid: f61791fc37eb3a44fb64aca29ab1e758
+  - enabled: 1
+    path: Assets/Scenes/lesson6_2_temple1.unity
+    guid: 0e506398289027b46b94c2eee612dd71
+  - enabled: 1
+    path: Assets/Scenes/lesson6_3_temple2.unity
+    guid: b8e1c6cdc3f981240b6b669c2a2081b3
+  m_configObjects:
+    Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 8fcef4efe3bfa9c4c8b9767fb5f13158, type: 2}
+    com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 52eaff09f0dca8a4390df7813e677ffe, type: 2}

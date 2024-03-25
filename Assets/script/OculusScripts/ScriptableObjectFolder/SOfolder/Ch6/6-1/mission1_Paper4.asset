@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06e591acdaa28ac49b081fcd1fc346b8, type: 3}
+  m_Name: mission1_Paper4
+  m_EditorClassIdentifier: 
+  artWork: {fileID: 21300000, guid: 44c360ef64123ac4384c74446539f004, type: 3}
+  title: "31.\u6587\u4EF6\u56DB"
+  description: "\u65E5\u672C\u4EBA\u5165\u53F0\u6642\u5728\u53F0\u5357\u8A2D\u7ACB\u885B\u620D\u91AB\u9662\uFF0C1907\u5E749\u670818\u65E5\uFF0C\u65E5\u65E5\u65B0\u5831\u7B2C2814\u865F\u5831\u5C0E\u4E86\u5728\u8D64\u5D01\u6A13\u767C\u73FE\u9B41\u661F\u723A\u7684\u65B0\u805E\u3002"
+  indexObject: 31

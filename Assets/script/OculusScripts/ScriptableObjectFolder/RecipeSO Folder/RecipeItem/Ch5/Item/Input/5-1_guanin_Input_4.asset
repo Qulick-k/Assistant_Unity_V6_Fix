@@ -1,0 +1,15 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99a5a70a7c1333346bb3d84824436080, type: 3}
+  m_Name: 5-1_guanin_Input_4
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 2147201283859985985, guid: eb94d7cc81f22d840bfb926ae3dd1583, type: 3}

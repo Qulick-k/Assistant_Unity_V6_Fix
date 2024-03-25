@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06e591acdaa28ac49b081fcd1fc346b8, type: 3}
+  m_Name: 6-3_ponhu_brand
+  m_EditorClassIdentifier: 
+  artWork: {fileID: 21300000, guid: 63c3abbb51fd15e40b79e3657709dbeb, type: 3}
+  title: "33.\u84EC\u58FA\u66F8\u9662"
+  description: "\u6C88\u53D7\u8B19\u63D0\u540D\u7684\u300C\u84EC\u58FA\u66F8\u9662\u300D\u533E\u984D\u639B\u5728\u9580\u4E0A\uFF0C\u5169\u5074\u7DA0\u91C9\u7A97\u4E0A\u65B9\u7684\u6A6B\u6279\u300C\u96F2\u8DEF\u300D\u3001\u300C\u7ACB\u8655\u300D\u3001\u300C\u9704\u7ABA\u300D\u3001\u300C\u9D6C\u7A0B\u300D\u4EE3\u8868\u82E6\u8B80\u9662\u4E2D\u4EBA\u7684\u5FC3\u60C5\uFF0C\u533E\u984D\u901A\u5E38\u61F8\u639B\u65BC\u6881\u67F1\u4E0A\u3002"
+  indexObject: 33

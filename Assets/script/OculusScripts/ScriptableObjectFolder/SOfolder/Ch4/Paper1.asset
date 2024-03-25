@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06e591acdaa28ac49b081fcd1fc346b8, type: 3}
+  m_Name: Paper1
+  m_EditorClassIdentifier: 
+  artWork: {fileID: 21300000, guid: 44c360ef64123ac4384c74446539f004, type: 3}
+  title: "8.\u6587\u4EF6\u4E00"
+  description: "\u540F\u6CBB\u4E0D\u826F\uFF1A1. \u5B98\u54E1\u8CAA\u6C61\u30012.
+    \u540F\u5F79\u64C5\u4F5C\u5A01\u798F\uFF0C\u6C11\u773E\u6ECB\u751F\u4E0D\u6EFF\u3002!"
+  indexObject: 8

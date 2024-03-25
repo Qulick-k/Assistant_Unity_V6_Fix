@@ -1,0 +1,88 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - thing
+  - huai
+  - people
+  - Hand
+  - PlayerWithSugar
+  - PlayerWithNerthland_A
+  - PlayerWithGou
+  - People_Blue
+  - blue_stranger
+  - green_stranger
+  - pink_stranger
+  - red_stranger
+  - Sugar
+  - huaiPaper
+  - hauiPaper
+  - TalkedToA
+  - people_sugarbefore
+  - shougun
+  - zenhe
+  - PlayerWithZen
+  - PlayerWithShou
+  - PlayerWithZenTwice
+  - Ground
+  - afterlin
+  - paperover
+  - onetimeOBJ
+  - findfu
+  - lin
+  - paper2
+  - paper5
+  - paper3
+  - paper1
+  - fu
+  - paper4
+  - pick
+  - hit
+  - gotolin
+  - green_stranger1
+  - circle2
+  - circle
+  - main_statue
+  - pinkgirl
+  - bluegirl
+  - greengirl
+  - redgirl
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - ObjectNoTouchPlayer
+  - Build
+  - UINoTouchEachOther
+  - DeckSteer
+  - non_Static
+  - minimap
+  - Player
+  - Only_0_5_8_layer
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0

@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "611113548520",
+    "firebase_url": "https://gptapi-c0dfd-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "gptapi-c0dfd",
+    "storage_bucket": "gptapi-c0dfd.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:611113548520:android:172a95091c59fc0c80675d",
+        "android_client_info": {
+          "package_name": "com.gptNPC.firebaseTest"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBAPQU4n45H73XkA962e5WDNLpk4k5S-8U"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06e591acdaa28ac49b081fcd1fc346b8, type: 3}
+  m_Name: Sugar
+  m_EditorClassIdentifier: 
+  artWork: {fileID: 21300000, guid: 09f692d4bfe027e49bee604c34f75839, type: 3}
+  title: "2.\u7518\u8517"
+  description: "\u6709\u4E00\u7A2E\u5E79\u5C0F\u800C\u97CC\u8005\u66F0\u7AF9\u8517\uFF0C\u6027\u6EAB\uFF0C\u6F3F\u7518\uFF0C\u4FD7\u7A31\u767D\u7518\u8517\u3002\u8377\u862D\u7D71\u6CBB\u6642\u671F\uFF0C\u8377\u862D\u6771\u5370\u5EA6\u516C\u53F8\u62DB\u52DF\u6F22\u4EBA\u4F86\u5230\u81FA\u7063\u8015\u7A2E\uFF0C\u4E26\u4E14\u9F13\u52F5\u6F22\u4EBA\u7A2E\u8517\u88FD\u7CD6\uFF0C\u7576\u6642\u4E3B\u8981\u51FA\u53E3\u5C0D\u8C61\u662F\u65E5\u672C\uFF0C1636\u5E74\u6642\u5916\u92B7\u7D66\u65E5\u672C\u7684\u767D\u7CD6\u670912042\u81FA\u65A4\uFF0C\u7D05\u7CD6110461\u81FA\u65A4\u3002"
+  indexObject: 2

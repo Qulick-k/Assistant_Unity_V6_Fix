@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b271a778d0b92f498d53bdafb0bb898, type: 3}
+  m_Name: 5-4_haishen_Sign
+  m_EditorClassIdentifier: 
+  inputItemSOList:
+  - {fileID: 11400000, guid: 25d888795c8b18d478aff3c27a626b4a, type: 2}
+  - {fileID: 11400000, guid: e8584a13ae6d8bf4a8ff943cda3d3cc4, type: 2}
+  outputItemSO: {fileID: 11400000, guid: 9d849c6eaf4677541abb2f2157185d4b, type: 2}
