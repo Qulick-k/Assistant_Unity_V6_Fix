@@ -18139,6 +18139,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6293089597498744337, guid: 1a980fa6228ecd847a5b35e1a8679e68, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6293089598037186911, guid: 1a980fa6228ecd847a5b35e1a8679e68, type: 3}
       propertyPath: WaitintResponse.m_PersistentCalls.m_Calls.Array.size
       value: 1
@@ -18214,6 +18218,10 @@ PrefabInstance:
     - target: {fileID: 6293089598193174548, guid: 1a980fa6228ecd847a5b35e1a8679e68, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6293089598692421175, guid: 1a980fa6228ecd847a5b35e1a8679e68, type: 3}
+      propertyPath: m_text
+      value: "\u662F\u9EDE\u64CA\u4E0B\u65B9\"\u6309\u9215\"\u5F8C\uFF0C\u8AAA\u8A71\u7D66GPT\u89D2\u8272\u807D\u3002"
       objectReference: {fileID: 0}
     - target: {fileID: 6293089599002563637, guid: 1a980fa6228ecd847a5b35e1a8679e68, type: 3}
       propertyPath: m_PresetInfoIsWorld
