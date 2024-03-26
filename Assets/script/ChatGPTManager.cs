@@ -62,7 +62,7 @@ public class ChatGPTManager : MonoBehaviour
     //提供提示詞方法GetInstructions()
     public string GetInstructions()
     {
-        string instructions = "你是一位歷史助教專門運用蘇格拉底式的質疑方式來引導學生深入思考歷史問題，" ;
+        string instructions = "你是一位歷史助教專門運用蘇格拉底式的質疑方式來引導學生深入思考歷史問題，以下是學生的問題:" ;
 
         return instructions;
     }
@@ -82,7 +82,7 @@ public class ChatGPTManager : MonoBehaviour
         var thread = await api.ThreadsEndpoint.RetrieveThreadAsync("thread_QzfPiSz0nsRvl7A8MU6tt63t");
 
         //建立message
-        var request = new CreateMessageRequest(GetInstructions() + newText + "90字內回答");
+        var request = new CreateMessageRequest(GetInstructions() + newText + "。請模仿蘇格拉底的質問用60字內引導學生的問題");
         var message = await api.ThreadsEndpoint.CreateMessageAsync(thread.Id, request);
         Debug.Log($"{message.Id}: {message.Role}: {message.PrintContent()}");
 
