@@ -18139,6 +18139,34 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6293089598037186911, guid: 1a980fa6228ecd847a5b35e1a8679e68, type: 3}
+      propertyPath: WaitintResponse.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6293089598037186911, guid: 1a980fa6228ecd847a5b35e1a8679e68, type: 3}
+      propertyPath: WaitintResponse.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6293089598037186911, guid: 1a980fa6228ecd847a5b35e1a8679e68, type: 3}
+      propertyPath: WaitintResponse.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 955628649}
+    - target: {fileID: 6293089598037186911, guid: 1a980fa6228ecd847a5b35e1a8679e68, type: 3}
+      propertyPath: WaitintResponse.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6293089598037186911, guid: 1a980fa6228ecd847a5b35e1a8679e68, type: 3}
+      propertyPath: WaitintResponse.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: set_text
+      objectReference: {fileID: 0}
+    - target: {fileID: 6293089598037186911, guid: 1a980fa6228ecd847a5b35e1a8679e68, type: 3}
+      propertyPath: WaitintResponse.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: TMPro.TMP_Text, Unity.TextMeshPro
+      objectReference: {fileID: 0}
+    - target: {fileID: 6293089598037186911, guid: 1a980fa6228ecd847a5b35e1a8679e68, type: 3}
+      propertyPath: WaitintResponse.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 6293089598193174547, guid: 1a980fa6228ecd847a5b35e1a8679e68, type: 3}
       propertyPath: m_Name
       value: GPT_Assistant_Group
@@ -31019,6 +31047,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: e5bc757812e018941be7457b4a59cf53, type: 3}
   m_PrefabInstance: {fileID: 955189902}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &955628649 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6293089598692421175, guid: 1a980fa6228ecd847a5b35e1a8679e68, type: 3}
+  m_PrefabInstance: {fileID: 189398754}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &960925212
 GameObject:
   m_ObjectHideFlags: 0

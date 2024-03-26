@@ -9,7 +9,6 @@ using OpenAI.Threads;
 using System.Threading;
 using System;
 using OpenAI.Chat;
-using UnityEditor.VersionControl;
 using Utilities.WebRequestRest;
 
 public class ChatGPTManager : MonoBehaviour
@@ -51,6 +50,7 @@ public class ChatGPTManager : MonoBehaviour
     }
 
     public OnResponseEvent OnResponse;
+    public OnResponseEvent WaitintResponse;
 
 
     ///序列化OnResponseEvent
@@ -98,7 +98,7 @@ public class ChatGPTManager : MonoBehaviour
         {
             Count++;
             //Thread.Sleep(1000);
-            StartCoroutine(Wait1Sec());
+            StartCoroutine(Wait1Sec(Count));
             runStatus = await thread.RetrieveRunAsync(run.Id);
             runStatus = await runStatus.UpdateAsync();
 
@@ -150,9 +150,11 @@ public class ChatGPTManager : MonoBehaviour
         OnResponse.Invoke(messages); //這裡是通知遊戲場景中的回覆欄接收OnResponse的通知，引數使用chatResponse.Content。像是TTS或是文字欄的更換
     }
 
-    IEnumerator Wait1Sec()
+    IEnumerator Wait1Sec(int Count)
     {
-        yield return new WaitForSeconds(1);
+        messages = "正在等待回覆:第" + Count + "次";
+        WaitintResponse.Invoke(messages);
+        yield return new WaitForSeconds(1);       
     }
 }
 
