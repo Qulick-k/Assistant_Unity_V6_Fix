@@ -82,7 +82,7 @@ public class ChatGPTManager : MonoBehaviour
         var thread = await api.ThreadsEndpoint.RetrieveThreadAsync("thread_QzfPiSz0nsRvl7A8MU6tt63t");
 
         //建立message
-        var request = new CreateMessageRequest(GetInstructions() + newText);
+        var request = new CreateMessageRequest(GetInstructions() + newText + "20字內回答");
         var message = await api.ThreadsEndpoint.CreateMessageAsync(thread.Id, request);
         Debug.Log($"{message.Id}: {message.Role}: {message.PrintContent()}");
 
@@ -97,7 +97,8 @@ public class ChatGPTManager : MonoBehaviour
         while (runStatus.Status != RunStatus.Completed)
         {
             Count++;
-            Thread.Sleep(1000);
+            //Thread.Sleep(1000);
+            StartCoroutine(Wait1Sec());
             runStatus = await thread.RetrieveRunAsync(run.Id);
             runStatus = await runStatus.UpdateAsync();
 
@@ -147,6 +148,11 @@ public class ChatGPTManager : MonoBehaviour
 
         //發出聲音+更新文字在文字欄
         OnResponse.Invoke(messages); //這裡是通知遊戲場景中的回覆欄接收OnResponse的通知，引數使用chatResponse.Content。像是TTS或是文字欄的更換
+    }
+
+    IEnumerator Wait1Sec()
+    {
+        yield return new WaitForSeconds(1);
     }
 }
 
