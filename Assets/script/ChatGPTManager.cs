@@ -82,7 +82,7 @@ public class ChatGPTManager : MonoBehaviour
         var thread = await api.ThreadsEndpoint.RetrieveThreadAsync("thread_QzfPiSz0nsRvl7A8MU6tt63t");
 
         //建立message
-        var request = new CreateMessageRequest(GetInstructions() + newText + "20字內回答");
+        var request = new CreateMessageRequest(GetInstructions() + newText + "90字內回答");
         var message = await api.ThreadsEndpoint.CreateMessageAsync(thread.Id, request);
         Debug.Log($"{message.Id}: {message.Role}: {message.PrintContent()}");
 
