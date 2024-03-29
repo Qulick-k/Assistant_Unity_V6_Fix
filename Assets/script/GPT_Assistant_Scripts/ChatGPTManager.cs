@@ -10,9 +10,19 @@ using System.Threading;
 using System;
 using OpenAI.Chat;
 using Utilities.WebRequestRest;
+using NUnit.Framework;
 
 public class ChatGPTManager : MonoBehaviour
 {
+    //決定是否使用綜合型提示詞的布林值，True就是使用綜合型提示詞，False就是使用一般提示詞
+    [SerializeField] private bool useComprehensivePrompt;
+    //存放Assistant的ID，兩個AI助手，一個是循序型助手的號碼，另一個是綜合型助手的號碼
+    [SerializeField] private string assistantID;
+    //存放OpenAI的API
+    private OpenAIClient api = null;
+    //存放thread    
+    private ThreadResponse threads = null;
+
     //存放assistant助手的訊息
     private string messages;
 
@@ -22,7 +32,7 @@ public class ChatGPTManager : MonoBehaviour
 
     //新增人設、場景、回覆字數上限
     //文字區域最少5行，最多20行
-    [TextArea(5,20)]
+    [TextArea(5, 20)]
     public string personality;   //你的名字是鏈鋸人的小小紅，而且你喜歡吃冰淇淋。
     [TextArea(5, 20)]
     public string scene;           //我們人正在遊樂園裡面散步，附近有一些攤販。
@@ -30,7 +40,7 @@ public class ChatGPTManager : MonoBehaviour
 
     //抓MainScene的APIKey和ORGKey
     [SerializeField] private MainScene mainScene;
-    
+
 
     //設一個結構NPCAction，設置動作關鍵字和動作描述
     //之後給系統序列化，讓NPCAction能在Unity上看到
@@ -43,7 +53,7 @@ public class ChatGPTManager : MonoBehaviour
     public struct NPCAction
     {
         public string actionKeyword;
-        [TextArea(2,5)]
+        [TextArea(2, 5)]
         public string actionDescription;
 
         public UnityEvent actionEvent;
@@ -57,40 +67,62 @@ public class ChatGPTManager : MonoBehaviour
     [System.Serializable]
     public class OnResponseEvent : UnityEvent<string> { }
 
-    
-
     //提供提示詞方法GetInstructions()
     public string GetInstructions()
     {
-        string instructions = "你是一位歷史助教專門運用蘇格拉底式的質疑方式來引導學生深入思考歷史問題，以下是學生的問題:" ;
+        string instructions = "你是一位歷史助教專門運用蘇格拉底式的質疑方式來引導學生深入思考歷史問題，以下是學生的問題:";
 
         return instructions;
     }
 
+    //如果要綜合型就回傳綜合型提示詞，否則回傳一般提示詞
+    string GetPrompt()
+    {
+        if (useComprehensivePrompt)
+        {
+            return "。請模仿蘇格拉底的質問用60字內引導學生的問題";
+        }
+        else
+        {
+            return "。請用60字內直接回答學生的問題";
+        }
+    }
 
 
     //新增AskChatGPT()方法，輸入參數為string
     public async void AskChatGPT(string newText)
-    {
-        //給予API授權
-        var api = new OpenAIClient(new OpenAIAuthentication(Open_APIKey, Open_ORGKey));
+    {          
+        ////給予API授權
+        api = new OpenAIClient(new OpenAIAuthentication(Open_APIKey, Open_ORGKey));
+        //var api = new OpenAIClient(new OpenAIAuthentication(Open_APIKey, Open_ORGKey));        
 
         //取回Assistant
-        var assistant = await api.AssistantsEndpoint.RetrieveAssistantAsync("asst_9qKD9VPJa2YtwQ3qsbOsQWbd");
+        if (assistantID == null)
+        {
+            Debug.LogError("Assistant ID is null，請在編輯器填上助手ID");
+        }
+        var assistant = await api.AssistantsEndpoint.RetrieveAssistantAsync(assistantID); //asst_9qKD9VPJa2YtwQ3qsbOsQWbd
 
-        //取回Thread
-        var thread = await api.ThreadsEndpoint.RetrieveThreadAsync("thread_QzfPiSz0nsRvl7A8MU6tt63t");
+        ////建立Thread
+        if (threads == null)
+        {
+            var thread = await api.ThreadsEndpoint.CreateThreadAsync();
+            threads = thread;
+        }
+        //var threads = await api.ThreadsEndpoint.CreateThreadAsync();
+        ////取回Thread
+        //var threads = await api.ThreadsEndpoint.RetrieveThreadAsync("thread_QzfPiSz0nsRvl7A8MU6tt63t");
 
         //建立message
-        var request = new CreateMessageRequest(GetInstructions() + newText + "。請模仿蘇格拉底的質問用60字內引導學生的問題");
-        var message = await api.ThreadsEndpoint.CreateMessageAsync(thread.Id, request);
+        var request = new CreateMessageRequest(GetInstructions() + newText + GetPrompt());
+        var message = await api.ThreadsEndpoint.CreateMessageAsync(threads.Id, request);
         Debug.Log($"{message.Id}: {message.Role}: {message.PrintContent()}");
 
         //執行run
-        var run = await thread.CreateRunAsync(assistant);
+        var run = await threads.CreateRunAsync(assistant);
 
         //等待run完成
-        var runStatus = await thread.RetrieveRunAsync(run);
+        var runStatus = await threads.RetrieveRunAsync(run);
         Debug.Log($"{runStatus.Status} | [{runStatus.Id}]");
         int Count = 0;
 
@@ -99,7 +131,7 @@ public class ChatGPTManager : MonoBehaviour
             Count++;
             //Thread.Sleep(1000);
             StartCoroutine(Wait1Sec(Count));
-            runStatus = await thread.RetrieveRunAsync(run.Id);
+            runStatus = await threads.RetrieveRunAsync(run.Id);
             runStatus = await runStatus.UpdateAsync();
 
 
@@ -107,23 +139,18 @@ public class ChatGPTManager : MonoBehaviour
         }
 
         //取回最新一段的訊息
-        GetMessage(thread);        
-
-        
-
-
-        
+        GetMessage(threads);        
     }
 
     private void Start()
-    {      
+    {   
         //新增訂閱者AskChatGPT()到voiceToText的event裡面
         voiceToText.DictationEvents.OnFullTranscription.AddListener(AskChatGPT);
     }
 
     private void Update()
     {
-        //如果之後要用VR，再用input action manager抓按鍵參考
+        //如果之後要用VR，再用input action manager抓按鍵參考。後來直接選擇點BUTTON來說話。
         if(Input.GetKeyDown(KeyCode.Space)) 
         {
             voiceToText.Activate();
@@ -155,6 +182,33 @@ public class ChatGPTManager : MonoBehaviour
         messages = "正在等待回覆:第" + Count + "次";
         WaitintResponse.Invoke(messages);
         yield return new WaitForSeconds(1);       
+    }
+
+    public async void CreateThread()
+    {
+        //新建一個Thread
+        var api = new OpenAIClient(new OpenAIAuthentication(Open_APIKey, Open_ORGKey));
+        var thread = await api.ThreadsEndpoint.CreateThreadAsync();
+        threads = thread;
+
+        print(threads.Id + "新增thread");
+    }
+
+    public async void DeleteThread()
+    {
+        if (threads != null)
+        {
+            //刪除舊的Thread
+            var api = new OpenAIClient(new OpenAIAuthentication(Open_APIKey, Open_ORGKey));
+            var isDeleted = await api.ThreadsEndpoint.DeleteThreadAsync(threads.Id);
+            Assert.IsTrue(isDeleted);
+            print(isDeleted + "刪除thread");
+        }
+        else
+        {
+            print("threads為null，無法刪除thread");
+        }
+        
     }
 }
 
