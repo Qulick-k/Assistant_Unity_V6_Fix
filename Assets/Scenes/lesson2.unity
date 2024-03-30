@@ -21108,6 +21108,10 @@ PrefabInstance:
       value: "\u5FAA\u5E8F\u578B_GPT_Assistant_Group"
       objectReference: {fileID: 0}
     - target: {fileID: 2542396262437187002, guid: 19a8d5057685829429081e71e0992506, type: 3}
+      propertyPath: SaveSystem
+      value: 
+      objectReference: {fileID: 8453822172156957519}
+    - target: {fileID: 2542396262437187002, guid: 19a8d5057685829429081e71e0992506, type: 3}
       propertyPath: assistantID
       value: asst_rRHpSNrbEjJbXdOpmzjtqc9Z
       objectReference: {fileID: 0}
@@ -79281,6 +79285,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: "\u7D9C\u5408\u578B_GPT_Assistant_Group"
       objectReference: {fileID: 0}
+    - target: {fileID: 2542396262437187002, guid: 19a8d5057685829429081e71e0992506, type: 3}
+      propertyPath: SaveSystem
+      value: 
+      objectReference: {fileID: 8453822172156957519}
     - target: {fileID: 2542396262887152339, guid: 19a8d5057685829429081e71e0992506, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0

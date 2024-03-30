@@ -10,13 +10,15 @@ public class PlayerData
     [SerializeField] public string playerTime;
     [SerializeField] public string playerActionType;
     [SerializeField] public int playerPickSugar;
+    [SerializeField] public string conversationRecord;
 
 
-    public PlayerData(string name, string time, string actiontype, int times) {
+    public PlayerData(string name, string time, string actiontype, int times, string record) {  //,string record
         
         playerName = name;
         playerTime = time;
         playerActionType = actiontype;
         playerPickSugar = times;
+        conversationRecord = record;
     }
 }

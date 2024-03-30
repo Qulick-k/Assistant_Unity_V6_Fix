@@ -18,7 +18,8 @@ public class SaveSystem : MonoBehaviour
     [SerializeField] public PlayerData player;
     [SerializeField] string type;
     [SerializeField] public static int pickupTimes;
- 
+    private string conversationRecord; //存放對話紀錄
+    
     [SerializeField] public string filename;
 
     public static bool change;
@@ -95,6 +96,14 @@ public class SaveSystem : MonoBehaviour
 
 
     }
+
+    //ChatGPTManager腳本會呼叫這個方法，玩家提問、助手回答都會呼叫
+    public void SaveConversationRecord(string record)
+    {
+        conversationRecord = record;
+        Save();
+    }
+
     public void PaperSelect()
     {
         type = "拾取文件";
@@ -103,7 +112,7 @@ public class SaveSystem : MonoBehaviour
     }
     public void Save()
     {
-        pldata.Add(new PlayerData(playerName, DateTime.Now.ToString(), type, pickupTimes));
+        pldata.Add(new PlayerData(playerName, DateTime.Now.ToString(), type, pickupTimes, conversationRecord)); //, conversationRecord  補上對話紀錄的引數
         FileHandler.SaveToJSON<PlayerData>(pldata, filename);
         WriteToCsv(FILENAME, pldata);
     }
@@ -140,7 +149,7 @@ public class SaveSystem : MonoBehaviour
 
         type = "撿取甘蔗";
 
-        pldata.Add(new PlayerData(playerName, DateTime.Now.ToString(), type, numprivate));
+        pldata.Add(new PlayerData(playerName, DateTime.Now.ToString(), type, numprivate, conversationRecord));  //, conversationRecord  補上對話紀錄的引數
         FileHandler.SaveToJSON<PlayerData>(pldata, filename);
         WriteToCsv(FILENAME, pldata);
         Debug.Log(numprivate);
@@ -154,7 +163,7 @@ public class SaveSystem : MonoBehaviour
             dataFile.WriteLine(returnDataRowName());
             foreach (var playerData in pldata)
             {
-                dataFile.WriteLine($"{playerData.playerName}, {playerData.playerTime}, {playerData.playerActionType}, {playerData.playerPickSugar}");
+                dataFile.WriteLine($"{playerData.playerName}, {playerData.playerTime}, {playerData.playerActionType}, {playerData.playerPickSugar}, {playerData.conversationRecord}"); //, {playerData.conversationRecord}  補上對話紀錄的引數
             }
             dataFile.Close();
         }
@@ -162,7 +171,7 @@ public class SaveSystem : MonoBehaviour
     }
     string returnDataRowName()
     {
-        return "Name, Time, ActionType";
+        return "Name, Time, ActionType, 撿甘蔗次數, 玩家對話紀錄"; //,撿甘蔗次數 ,玩家對話紀錄  補上CSV在首行的標題
     }
 
 }

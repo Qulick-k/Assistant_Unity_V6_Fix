@@ -14,6 +14,9 @@ using NUnit.Framework;
 
 public class ChatGPTManager : MonoBehaviour
 {
+    //接收SaveSystem的參考
+    [SerializeField] private SaveSystem SaveSystem;
+
     //決定是否使用綜合型提示詞的布林值，True就是使用綜合型提示詞，False就是使用一般提示詞
     [SerializeField] private bool useComprehensivePrompt;
     //存放Assistant的ID，兩個AI助手，一個是循序型助手的號碼，另一個是綜合型助手的號碼
@@ -120,6 +123,11 @@ public class ChatGPTManager : MonoBehaviour
         ////取回Thread
         //var threads = await api.ThreadsEndpoint.RetrieveThreadAsync("thread_QzfPiSz0nsRvl7A8MU6tt63t");
 
+        //抓取問答紀錄 = GetInstructions() + newText + GetPrompt()
+        //SaveSystem.Save(); 存檔
+        SaveSystem.SaveConversationRecord(GetInstructions() + newText + GetPrompt());
+        
+
         //建立message
         var request = new CreateMessageRequest(GetInstructions() + newText + GetPrompt());
         var message = await api.ThreadsEndpoint.CreateMessageAsync(threads.Id, request);
@@ -158,7 +166,7 @@ public class ChatGPTManager : MonoBehaviour
     private void Start()
     {   
         //新增訂閱者AskChatGPT()到voiceToText的event裡面
-        voiceToText.DictationEvents.OnFullTranscription.AddListener(AskChatGPT);
+        voiceToText.DictationEvents.OnFullTranscription.AddListener(AskChatGPT);               
     }
 
     private void Update()
@@ -185,6 +193,10 @@ public class ChatGPTManager : MonoBehaviour
         var getresponse = messageList.Items[0].PrintContent();
         messages = getresponse;
         Debug.Log($"{messages}");
+
+        //抓取問答紀錄 = messages;
+        //SaveSystem.Save(); 存檔
+        SaveSystem.SaveConversationRecord(messages);
 
         ///文字攔需要更改成可以使用卷軸顯示多行文字
         //發出聲音+更新文字在文字欄
