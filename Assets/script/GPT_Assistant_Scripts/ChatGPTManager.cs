@@ -70,9 +70,16 @@ public class ChatGPTManager : MonoBehaviour
     //提供提示詞方法GetInstructions()
     public string GetInstructions()
     {
-        string instructions = "你是一位歷史助教專門運用蘇格拉底式的質疑方式來引導學生深入思考歷史問題，以下是學生的問題:";
-
-        return instructions;
+        if (useComprehensivePrompt)
+        {
+            return "你是一位歷史助教專門運用蘇格拉底式的質疑方式來引導學生深入思考歷史問題，以下是學生的問題:";
+        }
+        else
+        {
+            return "你是一位歷史助教，專門使用循序漸進的條列式問題來回答學生的提問";
+        }
+        //string instructions = "你是一位歷史助教專門運用蘇格拉底式的質疑方式來引導學生深入思考歷史問題，以下是學生的問題:";
+        //return instructions;
     }
 
     //如果要綜合型就回傳綜合型提示詞，否則回傳一般提示詞
@@ -126,7 +133,8 @@ public class ChatGPTManager : MonoBehaviour
         Debug.Log($"{runStatus.Status} | [{runStatus.Id}]");
         int Count = 0;
 
-        while (runStatus.Status != RunStatus.Completed)
+        /// 補上RUN FAILED，Failedc或是Completed就斷迴圈
+        while (runStatus.Status != RunStatus.Completed )
         {
             Count++;
             //Thread.Sleep(1000);
@@ -136,6 +144,11 @@ public class ChatGPTManager : MonoBehaviour
 
 
             Debug.Log($"[{runStatus.Id}] {runStatus.Status} | {runStatus.CreatedAt} | 重更新了{Count}次");
+            if(runStatus.Status == RunStatus.Failed)
+            {                
+                Debug.LogError("Run Failed，直接擷取當下生成Messages");
+                break;
+            }
         }
 
         //取回最新一段的訊息
@@ -173,6 +186,7 @@ public class ChatGPTManager : MonoBehaviour
         messages = getresponse;
         Debug.Log($"{messages}");
 
+        ///文字攔需要更改成可以使用卷軸顯示多行文字
         //發出聲音+更新文字在文字欄
         OnResponse.Invoke(messages); //這裡是通知遊戲場景中的回覆欄接收OnResponse的通知，引數使用chatResponse.Content。像是TTS或是文字欄的更換
     }
