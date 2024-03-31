@@ -14,6 +14,8 @@ using NUnit.Framework;
 
 public class ChatGPTManager : MonoBehaviour
 {
+    //接收SaveSystemCh2的參考
+    [SerializeField] private SaveSystemCh2 SaveSystemCh2;
     //接收SaveSystem的參考
     [SerializeField] private SaveSystem SaveSystem;
 
@@ -125,7 +127,15 @@ public class ChatGPTManager : MonoBehaviour
 
         //抓取問答紀錄 = GetInstructions() + newText + GetPrompt()
         //SaveSystem.Save(); 存檔
-        SaveSystem.SaveConversationRecord(GetInstructions() + newText + GetPrompt());
+        if (SaveSystem != null)
+        {
+            SaveSystem.SaveConversationRecord(GetInstructions() + newText + GetPrompt());
+        }
+        if (SaveSystemCh2 != null)
+        {
+            SaveSystemCh2.SaveConversationRecordCh2(GetInstructions() + newText + GetPrompt());
+        }
+        
         
 
         //建立message
@@ -196,7 +206,17 @@ public class ChatGPTManager : MonoBehaviour
 
         //抓取問答紀錄 = messages;
         //SaveSystem.Save(); 存檔
-        SaveSystem.SaveConversationRecord(messages);
+        if (SaveSystem != null)
+        {
+            SaveSystem.SaveConversationRecord(messages);
+        }
+        
+
+        if(SaveSystemCh2 != null)
+        {
+            SaveSystemCh2.SaveConversationRecordCh2(messages);
+        }
+        
 
         ///文字攔需要更改成可以使用卷軸顯示多行文字
         //發出聲音+更新文字在文字欄

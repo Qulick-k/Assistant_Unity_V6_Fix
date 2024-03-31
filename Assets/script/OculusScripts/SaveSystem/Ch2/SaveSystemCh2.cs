@@ -14,6 +14,7 @@ public class SaveSystemCh2 : MonoBehaviour
     [SerializeField] public string playerName;
     [SerializeField] public string type;
     [SerializeField] PlayerDataCh2 playerDataCh2;
+    private string conversationRecord; //存放對話紀錄
 
     string FILEPATH;
     public string FILENAME;
@@ -27,7 +28,7 @@ public class SaveSystemCh2 : MonoBehaviour
     }
     public void Save()
     {
-        pldataCh2.Add(new PlayerDataCh2(playerName, DateTime.Now.ToString(), type) { playerName = playerName, playerTime = DateTime.Now.ToString(), playerActionType = type });
+        pldataCh2.Add(new PlayerDataCh2(playerName, DateTime.Now.ToString(), type, conversationRecord) { playerName = playerName, playerTime = DateTime.Now.ToString(), playerActionType = type, conversationRecordCh2 = conversationRecord });
         //pldataCh2.Add(new PlayerDataCh2(playerName, DateTime.Now.ToString(), type));
         FileHandler.SaveToJSON<PlayerDataCh2>(pldataCh2, filename);
         WriteToCsv(FILEPATH, pldataCh2);
@@ -127,6 +128,13 @@ public class SaveSystemCh2 : MonoBehaviour
         type = "和福康安對話";
         Save();
     }
+
+    public void SaveConversationRecordCh2(string record)
+    {
+        conversationRecord = record;
+        Save();
+    }
+
     public void WriteToCsv(string FILENAME, List<PlayerDataCh2> pldata2)
     {
         using (var dataFile = new StreamWriter(FILENAME, false, System.Text.Encoding.UTF8))
@@ -134,7 +142,7 @@ public class SaveSystemCh2 : MonoBehaviour
             dataFile.WriteLine(returnDataRowName());
             foreach (var playerDataCh2 in pldata2)
             {
-                dataFile.WriteLine($"{playerDataCh2.playerName}, {playerDataCh2.playerTime}, {playerDataCh2.playerActionType}");
+                dataFile.WriteLine($"{playerDataCh2.playerName}, {playerDataCh2.playerTime}, {playerDataCh2.playerActionType}, , {playerDataCh2.conversationRecordCh2}");
             }
             dataFile.Close();
         }

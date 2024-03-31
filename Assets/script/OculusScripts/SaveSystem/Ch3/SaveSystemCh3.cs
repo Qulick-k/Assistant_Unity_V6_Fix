@@ -14,6 +14,7 @@ public class SaveSystemCh3 : MonoBehaviour
     [SerializeField] public string playerName;
     [SerializeField] public string type;
     [SerializeField] PlayerDataCh2 playerDataCh2;
+    private string conversationRecord; //存放對話紀錄
 
     string FILENAME;
 
@@ -26,7 +27,7 @@ public class SaveSystemCh3 : MonoBehaviour
     }
     public void Save()
     {
-        pldataCh2.Add(new PlayerDataCh2(playerName, DateTime.Now.ToString(), type) { playerName = playerName, playerTime = DateTime.Now.ToString(), playerActionType = type });
+        pldataCh2.Add(new PlayerDataCh2(playerName, DateTime.Now.ToString(), type, conversationRecord) { playerName = playerName, playerTime = DateTime.Now.ToString(), playerActionType = type ,conversationRecordCh2 = conversationRecord });
         FileHandler.SaveToJSON<PlayerDataCh2>(pldataCh2, filename);
         WriteToCsv(FILENAME, pldataCh2);
     }
@@ -55,7 +56,7 @@ public class SaveSystemCh3 : MonoBehaviour
             dataFile.WriteLine(returnDataRowName());
             foreach (var playerDataCh2 in pldata2)
             {
-                dataFile.WriteLine($"{playerDataCh2.playerName}, {playerDataCh2.playerTime}, {playerDataCh2.playerActionType}");
+                dataFile.WriteLine($"{playerDataCh2.playerName}, {playerDataCh2.playerTime}, {playerDataCh2.playerActionType}, {playerDataCh2.conversationRecordCh2}");
             }
             dataFile.Close();
         }
