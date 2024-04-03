@@ -10,10 +10,12 @@ public class DialogManager : MonoBehaviour
     public UnityEngine.UI.Text messageText;
     public RectTransform backgroundBox;
     public GameObject DB, PL, endPanel;
-    public UnityEngine.UI.Text Mission1, Mission3, Mission4, Mission5;
+    public UnityEngine.UI.Text Mission1, Mission2, Mission3, Mission4, Mission5;  //循序型用的任務清單
     // Mission2放在蔗糖trigger的script裡面
 
-    
+    //綜合型用的任務清單
+    public Text Mission1Com, Mission3Com, Mission4Com, Mission5Com;  //Mission2Com暫時用不到
+
     public AudioSource[] typingSound_A;
     public AudioSource[] typingSound_B;
     private AudioSource[] currentSoundList;
@@ -76,58 +78,129 @@ public class DialogManager : MonoBehaviour
             CallObjectAnimatorOrCallMethodOrCheckTag.GetComponent<NPC_animate>().BackAnimate(); //呼叫指定物件改回待機動畫的方法
             CallObjectAnimatorOrCallMethodOrCheckTag.GetComponent<RandomPathTrolling>().SetWalkTrue(); //呼叫RandomPathTrolling腳本的方法，允許NPC移動
 
-            if (PL.tag == "Player")
+
+            ///在這裡分出綜合型跟循序型的差別
+            ///如果是循序型，就每完成一個任務就顯示下一個任務
+            if (KeepData.guideSwitch == true)
             {
-                DB.SetActive(false);
-                //spawnBool = true;
-                Mission1.text = "<color=green>✓ 1.認識抗荷的背景(前往竹簡)</color>";
-                //Mission1.color = Color.green;
+                if (PL.tag == "Player")
+                {
+                    DB.SetActive(false);
+                    //spawnBool = true;
+                    Mission1.text = "<color=green>✓ 1.認識抗荷的背景(前往竹簡)</color>";
+                    Mission2.color = new Color(Mission2.color.r, Mission2.color.g, Mission2.color.b, 1);          //讓任務2的顏色從透明變成原本的顏色
+                    //Mission1.color = Color.green;
+                }
+                else if (PL.tag == "PlayerWithSugar")
+                {
+                    if (CallObjectAnimatorOrCallMethodOrCheckTag.tag != "people")   //拿到蔗糖後，碰到的人如果不是荷蘭人A的話，就關閉對話框就好
+                    {
+                        DB.SetActive(false);
+                    }
+                    else   //拿到蔗糖後，確定碰到的人是荷蘭人A的話，就關閉對話窗+改變玩家的Tag+更新任務清單
+                    {
+                        DB.SetActive(false);
+                        PL.tag = "PlayerWithNerthland_A";
+                        Mission3.text = "<color=green>✓ 3.蔗糖是荷蘭人重要的經濟來源(找到荷蘭人並繳交甘蔗)</color>";
+                        //讓任務4的顏色從透明變成原本的顏色
+                        Mission4.color = new Color(Mission4.color.r, Mission4.color.g, Mission4.color.b, 1);
+                    }
+                }
+                else if (PL.tag == "PlayerWithNerthland_A")
+                {
+                    //跟荷蘭人A對話後，碰到的人如果不是郭懷一的話，對話完就把對話窗關閉
+                    if (CallObjectAnimatorOrCallMethodOrCheckTag.tag != "huai")
+                    {
+                        DB.SetActive(false);
+                        //PlayerTagDontChange = false;
+                    }
+                    else
+                    {
+                        //碰到的人如果是郭懷一的話，對話窗關閉+改變玩家的Tag+更新任務清單+顯示出文件
+                        DB.SetActive(false);
+                        PL.tag = "PlayerWithGou";
+                        Mission4.text = "<color=green>✓ 4.認識郭懷一擔任使節的原由、郭懷一抗荷蘭的成因(獲得文件)</color>";
+                        //讓任務5的顏色從透明變成原本的顏色
+                        Mission5.color = new Color(Mission5.color.r, Mission5.color.g, Mission5.color.b, 1);
+                        CallObjectAnimatorOrCallMethodOrCheckTag.GetComponent<HuaiGivePaper>().SetPaperActive();
+                    }
+                }
+                else if (PL.tag == "PlayerWithGou")
+                {
+                    //跟郭懷一對話後，碰到的人如果不是荷蘭人B的話，對話完就把對話窗關閉
+                    if (CallObjectAnimatorOrCallMethodOrCheckTag.tag != "People_Blue")
+                    {
+                        DB.SetActive(false);
+                    }
+                    else
+                    {
+                        //碰到的人如果是荷蘭人B的話，對話窗關閉+更新任務清單+隔兩秒顯示出單元總結畫面
+                        DB.SetActive(false);
+                        Mission5.text = "<color=green>✓ 5.荷蘭如何治理與處置反抗民眾(找藍色衣服荷蘭人的對話)\r\n</color>";
+                        EndCanvasManager.EndCanvas();
+                    }
+                }
             }
-            else if (PL.tag == "PlayerWithSugar")
+            ///如果是綜合型，就每完成一個任務，就只顯示完成了什麼任務
+            else
             {
-                if (CallObjectAnimatorOrCallMethodOrCheckTag.tag != "people")   //拿到蔗糖後，碰到的人如果不是荷蘭人A的話，就關閉對話框就好
+                switch (PL.tag)
                 {
-                    DB.SetActive(false);
-                }
-                else   //拿到蔗糖後，確定碰到的人是荷蘭人A的話，就關閉對話窗+改變玩家的Tag+更新任務清單
-                {
-                    DB.SetActive(false);
-                    PL.tag = "PlayerWithNerthland_A";
-                    Mission3.text = "<color=green>✓ 3.蔗糖是荷蘭人重要的經濟來源(找到荷蘭人並繳交甘蔗)</color>";
+                    case "Player":
+                        Debug.Log("進入switch迴圈");
+                        DB.SetActive(false);
+                        //spawnBool = true;
+                        Mission1Com.text = "<color=green>✓ 1.認識抗荷的背景(前往竹簡)</color>";
+                        Mission1Com.color = new Color(Mission1Com.color.r, Mission1Com.color.g, Mission1Com.color.b, 1);          //讓任務1的顏色從透明變成任務完成的顏色
+                        break;
+                    case "PlayerWithSugar":
+                        if (CallObjectAnimatorOrCallMethodOrCheckTag.tag != "people")   //拿到蔗糖後，碰到的人如果不是荷蘭人A的話，就關閉對話框就好
+                        {
+                            DB.SetActive(false);
+                        }
+                        else   //拿到蔗糖後，確定碰到的人是荷蘭人A的話，就關閉對話窗+改變玩家的Tag+更新任務清單
+                        {
+                            DB.SetActive(false);
+                            PL.tag = "PlayerWithNerthland_A";
+                            Mission3Com.text = "<color=green>✓ 3.蔗糖是荷蘭人重要的經濟來源(找到荷蘭人並繳交甘蔗)</color>";
+                            Mission3Com.color = new Color(Mission3Com.color.r, Mission3Com.color.g, Mission3Com.color.b, 1);          //讓任務3的顏色從透明變成任務完成的顏色
+                        }
+                        break;
+                    case "PlayerWithNerthland_A":
+                        //跟荷蘭人A對話後，碰到的人如果不是郭懷一的話，對話完就把對話窗關閉
+                        if (CallObjectAnimatorOrCallMethodOrCheckTag.tag != "huai")
+                        {
+                            DB.SetActive(false);
+                            //PlayerTagDontChange = false;
+                        }
+                        else
+                        {
+                            //碰到的人如果是郭懷一的話，對話窗關閉+改變玩家的Tag+更新任務清單+顯示出文件
+                            DB.SetActive(false);
+                            PL.tag = "PlayerWithGou";
+                            Mission4Com.text = "<color=green>✓ 4.認識郭懷一擔任使節的原由、郭懷一抗荷蘭的成因(獲得文件)</color>";
+                            Mission4Com.color = new Color(Mission4Com.color.r, Mission4Com.color.g, Mission4Com.color.b, 1);          //讓任務4的顏色從透明變成任務完成的顏色
+                            CallObjectAnimatorOrCallMethodOrCheckTag.GetComponent<HuaiGivePaper>().SetPaperActive();
+                        }
+                        break;
+                    case "PlayerWithGou":
+                        //跟郭懷一對話後，碰到的人如果不是荷蘭人B的話，對話完就把對話窗關閉
+                        if (CallObjectAnimatorOrCallMethodOrCheckTag.tag != "People_Blue")
+                        {
+                            DB.SetActive(false);
+                        }
+                        else
+                        {
+                            //碰到的人如果是荷蘭人B的話，對話窗關閉+更新任務清單+隔兩秒顯示出單元總結畫面
+                            DB.SetActive(false);
+                            Mission5Com.text = "<color=green>✓ 5.荷蘭如何治理與處置反抗民眾(找藍色衣服荷蘭人的對話)\r\n</color>";
+                            Mission5Com.color = new Color(Mission5Com.color.r, Mission5Com.color.g, Mission5Com.color.b, 1);          //讓任務5的顏色從透明變成任務完成的顏色
+                            EndCanvasManager.EndCanvas();
+                        }
+                        break;
                 }
             }
-            else if (PL.tag == "PlayerWithNerthland_A")
-            {
-                //跟荷蘭人A對話後，碰到的人如果不是郭懷一的話，對話完就把對話窗關閉
-                if (CallObjectAnimatorOrCallMethodOrCheckTag.tag != "huai")
-                {
-                    DB.SetActive(false);
-                    //PlayerTagDontChange = false;
-                }
-                else
-                {
-                    //碰到的人如果是郭懷一的話，對話窗關閉+改變玩家的Tag+更新任務清單+顯示出文件
-                    DB.SetActive(false);
-                    PL.tag = "PlayerWithGou";
-                    Mission4.text = "<color=green>✓ 4.認識郭懷一擔任使節的原由、郭懷一抗荷蘭的成因(獲得文件)</color>";
-                    CallObjectAnimatorOrCallMethodOrCheckTag.GetComponent<HuaiGivePaper>().SetPaperActive();
-                }
-            }
-            else if (PL.tag == "PlayerWithGou")
-            {
-                //跟郭懷一對話後，碰到的人如果不是荷蘭人B的話，對話完就把對話窗關閉
-                if (CallObjectAnimatorOrCallMethodOrCheckTag.tag != "People_Blue")
-                {
-                    DB.SetActive(false);
-                }
-                else
-                {
-                    //碰到的人如果是荷蘭人B的話，對話窗關閉+更新任務清單+隔兩秒顯示出單元總結畫面
-                    DB.SetActive(false);
-                    Mission5.text = "<color=green>✓ 5.荷蘭如何治理與處置反抗民眾(找藍色衣服荷蘭人的對話)\r\n</color>";
-                    EndCanvasManager.EndCanvas();
-                }
-            }
+           
         }
     }
     //void ShowEndCanvas()

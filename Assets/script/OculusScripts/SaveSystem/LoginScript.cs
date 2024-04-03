@@ -23,4 +23,15 @@ public class LoginScript : MonoBehaviour
         Debug.Log(PlName);
 
     }
+
+    public void GuideOn()
+    {
+        KeepData.guideSwitch = true;
+        Debug.Log("´`§Ç«¬");
+    }
+    public void GuideOff()
+    {
+        KeepData.guideSwitch = false;
+        Debug.Log("ºî¦X«¬");
+    }
 }
