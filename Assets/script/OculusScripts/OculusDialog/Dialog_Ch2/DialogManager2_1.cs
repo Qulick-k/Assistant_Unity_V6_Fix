@@ -10,7 +10,8 @@ public class DialogManager2_1 : MonoBehaviour
     public UnityEngine.UI.Text messageText;
     public RectTransform backgroundBox;
     public GameObject DB;//, PL, endPanel;
-    public UnityEngine.UI.Text Mission1;
+    public UnityEngine.UI.Text Mission1, Mission2;
+    public Text Mission1Com;
     public GameObject porTal;
 
 
@@ -66,13 +67,28 @@ public class DialogManager2_1 : MonoBehaviour
         //任務2完成訊息，執行在掛載在甘蔗上的PickUp腳本
         else
         {
-            //CallObjectAnimatorOrCallMethodOrCheckTag.GetComponent<NPC_animate>().BackAnimate(); //呼叫指定物件改回待機動畫的方法
-            //CallObjectAnimatorOrCallMethodOrCheckTag.GetComponent<RandomPathTrolling>().SetWalkTrue(); //呼叫RandomPathTrolling腳本的方法，允許NPC移動
+            ///在這裡分出綜合型跟循序型的差別
+            ///如果是循序型，就每完成一個任務就顯示下一個任務
+            ///如果是綜合型，就每完成一個任務，就只顯示完成了什麼任務
+            if (KeepData.guideSwitch)
+            {
+                //CallObjectAnimatorOrCallMethodOrCheckTag.GetComponent<NPC_animate>().BackAnimate(); //呼叫指定物件改回待機動畫的方法
+                //CallObjectAnimatorOrCallMethodOrCheckTag.GetComponent<RandomPathTrolling>().SetWalkTrue(); //呼叫RandomPathTrolling腳本的方法，允許NPC移動
 
-            DB.SetActive(false);
-            porTal.SetActive(true);
-            DB.SetActive(false);
-            Mission1.text = "<color=green>✓ 1.認識建造普羅民遮城的背景(前往竹簡)</color>";
+                DB.SetActive(false);
+                porTal.SetActive(true);
+                DB.SetActive(false);
+                Mission1.text = "<color=green>✓ 1.認識建造普羅民遮城的背景(前往竹簡)</color>";
+                Mission2.color = new Color(Mission2.color.r, Mission2.color.g, Mission2.color.b, 1);
+            }
+            else
+            {
+                DB.SetActive(false);
+                porTal.SetActive(true);
+                DB.SetActive(false);
+                Mission1Com.text = "<color=green>✓ 1.認識建造普羅民遮城的背景(前往竹簡)</color>";
+            }
+            
             
         }
     }
