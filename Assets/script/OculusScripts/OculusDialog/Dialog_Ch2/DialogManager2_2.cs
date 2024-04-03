@@ -88,7 +88,15 @@ public class DialogManager2_2 : MonoBehaviour
             }
             else 
             {
-                XrOrigin.tag = "TalkedToA";
+                //如果有CallObjectAnimatorOrCallMethodOrCheckTag，且CallObjectAnimatorOrCallMethodOrCheckTag的名字是"Aboriginal_blue_rig"，那就把XrOrigin的tag設為TalkedToA
+                if (CallObjectAnimatorOrCallMethodOrCheckTag != null)
+                {
+                    if (CallObjectAnimatorOrCallMethodOrCheckTag.name == "Aboriginal_blue_rig")
+                    {
+                        XrOrigin.tag = "TalkedToA";
+                    }
+                }
+                
             }
             
             
