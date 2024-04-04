@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Reflection;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class DialogManager2_3 : MonoBehaviour
 {
@@ -9,7 +10,8 @@ public class DialogManager2_3 : MonoBehaviour
     public UnityEngine.UI.Text messageText;
     public RectTransform backgroundBox;
     public GameObject DB, XrOrigin;//, endPanel;
-    public UnityEngine.UI.Text Mission3;
+    public UnityEngine.UI.Text Mission3, Mission4;
+    public Text Mission3Com;
     //public GameObject porTal;
 
     public GameObject CallObjectAnimatorOrCallMethodOrCheckTag;  //這欄位放各個對話窗所屬的NPC
@@ -68,7 +70,17 @@ public class DialogManager2_3 : MonoBehaviour
             CallObjectAnimatorOrCallMethodOrCheckTag.GetComponent<RandomPathTrolling>().SetWalkTrue(); //呼叫RandomPathTrolling腳本的方法，允許NPC移動
 
             DB.SetActive(false);
-            Mission3.text = "<color=green>✓ 3.認識各個材料的功用(找原住民對話收集材料)</color>";
+            
+            if (KeepData.guideSwitch)
+            {
+                Mission3.text = "<color=green>✓ 3.認識各個材料的功用(找原住民對話收集材料)</color>";
+                Mission4.color = new Color(Mission4.color.r, Mission4.color.g, Mission4.color.b, 1);
+            }
+            else
+            {
+                Mission3Com.text = "<color=green>✓ 3.認識各個材料的功用(找原住民對話收集材料)</color>";
+            }
+            
 
 
             //porTal.SetActive(true);

@@ -23,7 +23,8 @@ public class CraftingSystem : MonoBehaviour
     public GameObject table, portal;
     int index;
 
-    public UnityEngine.UI.Text Mission4;
+    public UnityEngine.UI.Text Mission4, Mission5;
+    public Text Mission4Com;
 
     private void Awake()
     {
@@ -80,7 +81,17 @@ public class CraftingSystem : MonoBehaviour
             {
                 Destroy(consumeItemGameObject);
             }
-            Mission4.text = "<color=green>✓ 4.了解哪些組合材料可以合成(將材料合成)</color>";
+
+            if (KeepData.guideSwitch)
+            {
+                Mission4.text = "<color=green>✓ 4.了解哪些組合材料可以合成(將材料合成)</color>";
+                Mission5.color = new Color(Mission5.color.r, Mission5.color.g, Mission5.color.b, 1);
+            }
+            else
+            {
+                Mission4Com.text = "<color=green>✓ 4.了解哪些組合材料可以合成(將材料合成)</color>";
+            }
+
             table.GetComponent<SaveSystemCh2>().type = "合成成功";
             table.GetComponent<SaveSystemCh2>().Save();
             if (index == 1)

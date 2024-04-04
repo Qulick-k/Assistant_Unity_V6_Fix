@@ -3,10 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 using System.IO;
+using UnityEngine.UI;
 
 [System.Serializable]
 public class SaveSystemCh2 : MonoBehaviour
 {
+    //Åã¥Ü³H´ß¦Ç¡BÄz¦Ì¼ß¡B¿}¤ôªº¤å¦r
+    public Text shellText, riceText, sugarText, brickText; //´`§Ç«¬
+    public Text shellTextCom, riceTextCom, sugarTextCom, brickTextCom; //ºî¦X«¬
+
     //public List<PlayerDataCh2> pldataCh2= new List<PlayerDataCh2>();
     public List<PlayerDataCh2> pldataCh2;
 
@@ -101,21 +106,82 @@ public class SaveSystemCh2 : MonoBehaviour
     public void PickRice()
     {
         type = "¾ß¨úÄz¦Ì¼ß";
+        
+        if (KeepData.guideSwitch)
+        {
+            if (riceText != null)
+            {
+                riceText.text = "<color=green>Äz¦Ì¼ß</color>";
+            }            
+        }
+        else
+        {
+            if (riceTextCom != null)
+            {
+                riceTextCom.text = "<color=green>Äz¦Ì¼ß</color>";
+            }            
+        }                
         Save();        
     }
     public void PickShell()
     {
         type = "¾ß¨ú³H´ß¦Ç";
+        
+        if (KeepData.guideSwitch)
+        {
+            if (shellText != null)
+            {
+                shellText.text = "<color=green>³H´ß¦Ç</color>";
+            }
+        }
+        else
+        {
+            if (shellTextCom != null)
+            {
+                shellTextCom.text = "<color=green>³H´ß¦Ç</color>";
+            }            
+        }
+                
         Save();        
     }
     public void PickBrick()
     {
         type = "¾ß¨ú¬õ¿j¥Û";
+        
+        if (KeepData.guideSwitch)
+        {
+            if (brickText != null)
+            {
+                brickText.text = "<color=green>¬õ¿j¥Û</color>";
+            }            
+        }
+        else
+        {
+            if (brickTextCom != null)
+            {
+                brickTextCom.text = "<color=green>¬õ¿j¥Û</color>";
+            }
+           
+        }
         Save();        
     }
     public void PickSugar()
     {
         type = "¾ß¨ú¿}¤ô";
+        if (KeepData.guideSwitch)
+        {
+            if (sugarText != null)
+            {
+                sugarText.text = "<color=green>¿}¤ô</color>";
+            }
+        }            
+        else
+        {
+            if (sugarTextCom != null)
+            {
+                sugarTextCom.text = "<color=green>¿}¤ô</color>";
+            }            
+        }
         Save();  
     }
     public void PickPaper()
