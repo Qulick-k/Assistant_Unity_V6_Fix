@@ -85,16 +85,26 @@ public class DialogManager : MonoBehaviour
             {
                 if (PL.tag == "Player")
                 {
-                    DB.SetActive(false);
-                    //spawnBool = true;
-                    Mission1.text = "<color=green>✓ 1.認識抗荷的背景(前往竹簡)</color>";
-                    Mission2.color = new Color(Mission2.color.r, Mission2.color.g, Mission2.color.b, 1);          //讓任務2的顏色從透明變成原本的顏色
-                    //Mission1.color = Color.green;
+                    if (CallObjectAnimatorOrCallMethodOrCheckTag.name == "diaplace2_1")
+                    {
+                        DB.SetActive(false);
+                        //spawnBool = true;
+                        Mission1.text = "<color=green>✓ 1.認識抗荷的背景(前往竹簡)</color>";
+                        Mission2.color = new Color(Mission2.color.r, Mission2.color.g, Mission2.color.b, 1);          //讓任務2的顏色從透明變成原本的顏色
+                                                                                                                      //Mission1.color = Color.green;
+                    }
+                    DB.SetActive(false);                    
                 }
                 else if (PL.tag == "PlayerWithSugar")
                 {
                     if (CallObjectAnimatorOrCallMethodOrCheckTag.tag != "people")   //拿到蔗糖後，碰到的人如果不是荷蘭人A的話，就關閉對話框就好
                     {
+                        if(CallObjectAnimatorOrCallMethodOrCheckTag.name == "diaplace2_1")
+                        {
+                            DB.SetActive(false);
+                            Mission1.text = "<color=green>✓ 1.認識抗荷的背景(前往竹簡)</color>";
+                            Mission2.color = new Color(Mission2.color.r, Mission2.color.g, Mission2.color.b, 1);          //讓任務2的顏色從透明變成原本的顏色
+                        }
                         DB.SetActive(false);
                     }
                     else   //拿到蔗糖後，確定碰到的人是荷蘭人A的話，就關閉對話窗+改變玩家的Tag+更新任務清單
@@ -111,6 +121,12 @@ public class DialogManager : MonoBehaviour
                     //跟荷蘭人A對話後，碰到的人如果不是郭懷一的話，對話完就把對話窗關閉
                     if (CallObjectAnimatorOrCallMethodOrCheckTag.tag != "huai")
                     {
+                        if (CallObjectAnimatorOrCallMethodOrCheckTag.name == "diaplace2_1")
+                        {
+                            DB.SetActive(false);
+                            Mission1.text = "<color=green>✓ 1.認識抗荷的背景(前往竹簡)</color>";
+                            Mission2.color = new Color(Mission2.color.r, Mission2.color.g, Mission2.color.b, 1);          //讓任務2的顏色從透明變成原本的顏色
+                        }
                         DB.SetActive(false);
                         //PlayerTagDontChange = false;
                     }
@@ -130,6 +146,12 @@ public class DialogManager : MonoBehaviour
                     //跟郭懷一對話後，碰到的人如果不是荷蘭人B的話，對話完就把對話窗關閉
                     if (CallObjectAnimatorOrCallMethodOrCheckTag.tag != "People_Blue")
                     {
+                        if (CallObjectAnimatorOrCallMethodOrCheckTag.name == "diaplace2_1")
+                        {
+                            DB.SetActive(false);
+                            Mission1.text = "<color=green>✓ 1.認識抗荷的背景(前往竹簡)</color>";
+                            Mission2.color = new Color(Mission2.color.r, Mission2.color.g, Mission2.color.b, 1);          //讓任務2的顏色從透明變成原本的顏色
+                        }
                         DB.SetActive(false);
                     }
                     else
@@ -148,14 +170,24 @@ public class DialogManager : MonoBehaviour
                 {
                     case "Player":
                         Debug.Log("進入switch迴圈");
+                        if (CallObjectAnimatorOrCallMethodOrCheckTag.name == "diaplace2_1")
+                        {
+                            DB.SetActive(false);
+                            //spawnBool = true;
+                            Mission1Com.text = "<color=green>✓ 1.認識抗荷的背景(前往竹簡)</color>";
+                            Mission1Com.color = new Color(Mission1Com.color.r, Mission1Com.color.g, Mission1Com.color.b, 1);          //讓任務1的顏色從透明變成任務完成的顏色
+                        }
                         DB.SetActive(false);
-                        //spawnBool = true;
-                        Mission1Com.text = "<color=green>✓ 1.認識抗荷的背景(前往竹簡)</color>";
-                        Mission1Com.color = new Color(Mission1Com.color.r, Mission1Com.color.g, Mission1Com.color.b, 1);          //讓任務1的顏色從透明變成任務完成的顏色
                         break;
                     case "PlayerWithSugar":
                         if (CallObjectAnimatorOrCallMethodOrCheckTag.tag != "people")   //拿到蔗糖後，碰到的人如果不是荷蘭人A的話，就關閉對話框就好
                         {
+                            if (CallObjectAnimatorOrCallMethodOrCheckTag.name == "diaplace2_1")
+                            {
+                                DB.SetActive(false);
+                                Mission1Com.text = "<color=green>✓ 1.認識抗荷的背景(前往竹簡)</color>";
+                                Mission1Com.color = new Color(Mission1Com.color.r, Mission1Com.color.g, Mission1Com.color.b, 1);          //讓任務1的顏色從透明變成任務完成的顏色
+                            }
                             DB.SetActive(false);
                         }
                         else   //拿到蔗糖後，確定碰到的人是荷蘭人A的話，就關閉對話窗+改變玩家的Tag+更新任務清單
@@ -170,6 +202,12 @@ public class DialogManager : MonoBehaviour
                         //跟荷蘭人A對話後，碰到的人如果不是郭懷一的話，對話完就把對話窗關閉
                         if (CallObjectAnimatorOrCallMethodOrCheckTag.tag != "huai")
                         {
+                            if (CallObjectAnimatorOrCallMethodOrCheckTag.name == "diaplace2_1")
+                            {
+                                DB.SetActive(false);
+                                Mission1Com.text = "<color=green>✓ 1.認識抗荷的背景(前往竹簡)</color>";
+                                Mission1Com.color = new Color(Mission1Com.color.r, Mission1Com.color.g, Mission1Com.color.b, 1);          //讓任務1的顏色從透明變成任務完成的顏色
+                            }
                             DB.SetActive(false);
                             //PlayerTagDontChange = false;
                         }
@@ -187,6 +225,13 @@ public class DialogManager : MonoBehaviour
                         //跟郭懷一對話後，碰到的人如果不是荷蘭人B的話，對話完就把對話窗關閉
                         if (CallObjectAnimatorOrCallMethodOrCheckTag.tag != "People_Blue")
                         {
+                            if (CallObjectAnimatorOrCallMethodOrCheckTag.name == "diaplace2_1")
+                            {
+                                DB.SetActive(false);
+                                //spawnBool = true;
+                                Mission1Com.text = "<color=green>✓ 1.認識抗荷的背景(前往竹簡)</color>";
+                                Mission1Com.color = new Color(Mission1Com.color.r, Mission1Com.color.g, Mission1Com.color.b, 1);          //讓任務1的顏色從透明變成任務完成的顏色
+                            }
                             DB.SetActive(false);
                         }
                         else
