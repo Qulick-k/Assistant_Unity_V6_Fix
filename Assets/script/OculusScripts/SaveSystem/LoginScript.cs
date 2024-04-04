@@ -7,7 +7,9 @@ using UnityEngine.UI;
 
 public class LoginScript : MonoBehaviour
 {
-    
+    //
+    [SerializeField] private TMP_Text guideWord;
+
     [SerializeField] public TMP_Text text, text2;
 
     public string PlName;
@@ -27,11 +29,13 @@ public class LoginScript : MonoBehaviour
     public void GuideOn()
     {
         KeepData.guideSwitch = true;
+        guideWord.text = "成功開啟引導(循序型)";
         Debug.Log("循序型");
     }
     public void GuideOff()
     {
         KeepData.guideSwitch = false;
+        guideWord.text = "成功關閉引導(綜合型)";
         Debug.Log("綜合型");
     }
 }

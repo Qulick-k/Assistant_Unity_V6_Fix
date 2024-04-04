@@ -11,7 +11,7 @@ public class SwitchHandMenuType : MonoBehaviour
 
     private void Start()
     {
-        KeepData.guideSwitch = true;
+        //KeepData.guideSwitch = true;
         //如果需要引導，就開啟循序型任務清單、關閉綜合型任務清單；如果不需要引導，就開啟綜合型任務清單、關閉循序型任務清單
         if (KeepData.guideSwitch == true)
         {

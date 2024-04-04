@@ -293,6 +293,7 @@ MonoBehaviour:
     playerTime: 
     playerActionType: 
     playerPickSugar: 0
+    conversationRecord: 
   type: 
   filename: playerdata.json
   numprivate: 0
@@ -2914,6 +2915,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sugarTable: {fileID: 0}
+  Mission3: {fileID: 0}
 --- !u!1 &3752206844513134950
 GameObject:
   m_ObjectHideFlags: 0
