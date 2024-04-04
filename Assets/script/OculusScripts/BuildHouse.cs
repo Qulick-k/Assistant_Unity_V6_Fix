@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Reflection;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class BuildHouse : MonoBehaviour
 {
@@ -11,6 +12,7 @@ public class BuildHouse : MonoBehaviour
     public EndCanvasManagerCh2 endCanvasManager;
 
     public UnityEngine.UI.Text Mission5;
+    public Text Mission5Com;
 
     public void Build()
     {
@@ -20,7 +22,15 @@ public class BuildHouse : MonoBehaviour
         {
             endCanvasManager.ShowEndCanvas();
             buildCanvas.SetActive(false);
-            Mission5.text = "<color=green>✓ 5.為荷蘭人造出普羅民遮城(建造普羅民遮城)</color>";
+            if (KeepData.guideSwitch)
+            {
+                Mission5.text = "<color=green>✓ 5.為荷蘭人造出普羅民遮城(建造普羅民遮城)</color>";
+            }
+            else
+            {
+                Mission5Com.text = "<color=green>✓ 5.為荷蘭人造出普羅民遮城(建造普羅民遮城)</color>";
+            }
+            
         }
     }
     private void Start()
