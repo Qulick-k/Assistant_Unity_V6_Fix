@@ -14,6 +14,7 @@ using NUnit.Framework;
 
 public class ChatGPTManager : MonoBehaviour
 {
+
     //接收SaveSystemCh2的參考
     [SerializeField] private SaveSystemCh2 SaveSystemCh2;
     //接收SaveSystem的參考
@@ -66,6 +67,7 @@ public class ChatGPTManager : MonoBehaviour
 
     public OnResponseEvent OnResponse;
     public OnResponseEvent WaitintResponse;
+    public OnResponseEvent OnUserQuestion;
 
 
     ///序列化OnResponseEvent
@@ -100,6 +102,10 @@ public class ChatGPTManager : MonoBehaviour
         }
     }
 
+    string UserQuestion(string userText)
+    {
+        return "使用者的提問:"+ userText;
+    }
 
     //新增AskChatGPT()方法，輸入參數為string
     public async void AskChatGPT(string newText)
@@ -135,8 +141,9 @@ public class ChatGPTManager : MonoBehaviour
         {
             SaveSystemCh2.SaveConversationRecordCh2(GetInstructions() + newText + GetPrompt());
         }
-        
-        
+
+        //顯示使用者問題的文字到面板上，如果有訂閱的話，就回傳使用者問題
+        OnUserQuestion.Invoke(UserQuestion(newText));
 
         //建立message
         var request = new CreateMessageRequest(GetInstructions() + newText + GetPrompt());
@@ -210,13 +217,10 @@ public class ChatGPTManager : MonoBehaviour
         {
             SaveSystem.SaveConversationRecord(messages);
         }
-        
-
         if(SaveSystemCh2 != null)
         {
             SaveSystemCh2.SaveConversationRecordCh2(messages);
         }
-        
 
         ///文字攔需要更改成可以使用卷軸顯示多行文字
         //發出聲音+更新文字在文字欄
