@@ -8,6 +8,9 @@ using UnityEngine.UI;
 [System.Serializable]
 public class SaveSystemCh2 : MonoBehaviour
 {
+    //第二單元各場景的名字填到下面的字串
+    [SerializeField] private string sceneName;
+
     //顯示蚵殼灰、糯米漿、糖水的文字
     public Text shellText, riceText, sugarText, brickText; //循序型
     public Text shellTextCom, riceTextCom, sugarTextCom, brickTextCom; //綜合型
@@ -36,9 +39,17 @@ public class SaveSystemCh2 : MonoBehaviour
 
     public void LogBeginning()
     {
-        //使用者進入第二單元，就紀錄使用者進入了第一單元
-        type = "進入第二單元";
-        Save();
+        //使用者進入第二單元，就紀錄使用者進入了第二單元，不需要使用UnityEvent
+        if (sceneName != null)
+        {
+            type = "進入第二單元的" + sceneName;
+            Save();            
+        }
+        else
+        {
+            print("場景名字為填寫進sceneName，如果不需紀錄則不用理會此訊息");
+        }
+        
     }
 
     /// <summary>
@@ -46,15 +57,15 @@ public class SaveSystemCh2 : MonoBehaviour
     /// </summary>
     public void LogBackLobby()
     {
-        //使用者離開第一單元，就紀錄使用者離開了第一單元
-        type = "回到關卡選擇大廳";
+        //使用者離開第二單元，就紀錄使用者離開了第二單元
+        type = "從第二單元回到關卡選擇大廳";
         Save();
     }
 
     public void LogRestart()
     {
-        //使用者重新開始第一單元，就紀錄使用者重新開始了第一單元
-        type = "重新開始第一單元";
+        //使用者重新開始第二單元，就紀錄使用者重新開始了第二單元
+        type = "重新開始第二單元";
         Save();
     }
 

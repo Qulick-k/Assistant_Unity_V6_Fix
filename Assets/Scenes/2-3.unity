@@ -9867,6 +9867,34 @@ PrefabInstance:
       propertyPath: m_AnchorMin.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8583909671148025403, guid: c9acbfe224ac2e045a81468ace551aad, type: 3}
+      propertyPath: saveLobbyEvent.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8583909671148025403, guid: c9acbfe224ac2e045a81468ace551aad, type: 3}
+      propertyPath: saveLobbyEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8583909671148025403, guid: c9acbfe224ac2e045a81468ace551aad, type: 3}
+      propertyPath: saveLobbyEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 342534919}
+    - target: {fileID: 8583909671148025403, guid: c9acbfe224ac2e045a81468ace551aad, type: 3}
+      propertyPath: saveLobbyEvent.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8583909671148025403, guid: c9acbfe224ac2e045a81468ace551aad, type: 3}
+      propertyPath: saveLobbyEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: LogBackLobby
+      objectReference: {fileID: 0}
+    - target: {fileID: 8583909671148025403, guid: c9acbfe224ac2e045a81468ace551aad, type: 3}
+      propertyPath: saveLobbyEvent.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: SaveSystemCh2, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 8583909671148025403, guid: c9acbfe224ac2e045a81468ace551aad, type: 3}
+      propertyPath: saveLobbyEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c9acbfe224ac2e045a81468ace551aad, type: 3}
 --- !u!1 &1588490293
@@ -34803,6 +34831,10 @@ PrefabInstance:
       propertyPath: brickText
       value: 
       objectReference: {fileID: 326157083}
+    - target: {fileID: 6107474476086708533, guid: 59ed4477651f5714f9e0cdf41f5e7a71, type: 3}
+      propertyPath: sceneName
+      value: "\u5834\u666F2-3"
+      objectReference: {fileID: 0}
     - target: {fileID: 6107474476086708533, guid: 59ed4477651f5714f9e0cdf41f5e7a71, type: 3}
       propertyPath: shellText
       value: 

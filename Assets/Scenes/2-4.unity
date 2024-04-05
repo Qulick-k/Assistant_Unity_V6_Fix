@@ -3703,6 +3703,36 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0c2439c9f7123f4eac7171aaecfae1e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  saveLobbyEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1121121828}
+        m_TargetAssemblyTypeName: SaveSystemCh2, Assembly-CSharp
+        m_MethodName: LogBackLobby
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  restartEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   differentScene: 
 --- !u!1001 &351795394
 PrefabInstance:
@@ -6684,6 +6714,34 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -99.99924
       objectReference: {fileID: 0}
+    - target: {fileID: 8583909671148025403, guid: c9acbfe224ac2e045a81468ace551aad, type: 3}
+      propertyPath: saveLobbyEvent.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8583909671148025403, guid: c9acbfe224ac2e045a81468ace551aad, type: 3}
+      propertyPath: saveLobbyEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8583909671148025403, guid: c9acbfe224ac2e045a81468ace551aad, type: 3}
+      propertyPath: saveLobbyEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1121121828}
+    - target: {fileID: 8583909671148025403, guid: c9acbfe224ac2e045a81468ace551aad, type: 3}
+      propertyPath: saveLobbyEvent.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8583909671148025403, guid: c9acbfe224ac2e045a81468ace551aad, type: 3}
+      propertyPath: saveLobbyEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: LogBackLobby
+      objectReference: {fileID: 0}
+    - target: {fileID: 8583909671148025403, guid: c9acbfe224ac2e045a81468ace551aad, type: 3}
+      propertyPath: saveLobbyEvent.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: SaveSystemCh2, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 8583909671148025403, guid: c9acbfe224ac2e045a81468ace551aad, type: 3}
+      propertyPath: saveLobbyEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c9acbfe224ac2e045a81468ace551aad, type: 3}
 --- !u!1001 &768554349
@@ -7349,7 +7407,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8561962399335364913, guid: 4044ab012cbca7d44a1393a09b5086ce, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -0.0040568095
+      value: -0.0040632966
       objectReference: {fileID: 0}
     - target: {fileID: 8561962399335364913, guid: 4044ab012cbca7d44a1393a09b5086ce, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -10480,6 +10538,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59bb600de5f690d4a82200e1a1ed090e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sceneName: "\u5834\u666F2-4"
   shellText: {fileID: 1138011941}
   riceText: {fileID: 1138011941}
   sugarText: {fileID: 1138011941}
@@ -12488,6 +12547,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb398b69eea3fdb48b0423e277b96a86, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  restartEventCh2:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1121121828}
+        m_TargetAssemblyTypeName: SaveSystemCh2, Assembly-CSharp
+        m_MethodName: LogRestart
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   PL: {fileID: 1121121817}
   endCanvas: {fileID: 1203129107}
   filename: playerdatach2.json

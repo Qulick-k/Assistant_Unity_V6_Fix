@@ -52,7 +52,7 @@ public class SaveSystem : MonoBehaviour
     public void LogBackLobby()
     {
         //使用者離開第一單元，就紀錄使用者離開了第一單元
-        type = "回到關卡選擇大廳";
+        type = "從第一單元回到回到關卡選擇大廳";
         Save();
     }
 

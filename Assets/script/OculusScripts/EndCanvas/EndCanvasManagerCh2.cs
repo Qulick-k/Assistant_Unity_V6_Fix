@@ -2,11 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class EndCanvasManagerCh2 : MonoBehaviour
 {
+    //新增unityevent給player用來存檔，如果有物件訂閱，就通知他存檔
+    public UnityEvent restartEventCh2;
+
     public GameObject PL, endCanvas;
     List<PlayerDataCh2> pldata2 ;
 
@@ -59,6 +63,7 @@ public class EndCanvasManagerCh2 : MonoBehaviour
     }
     public void Restart()
     {
+        restartEventCh2.Invoke();
         SceneManager.LoadScene("2-1");
     }
     public void ReadFile()

@@ -430,7 +430,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 716718400}
   m_Direction: 2
   m_Value: 1
-  m_Size: 0.9999915
+  m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -1800,6 +1800,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0c2439c9f7123f4eac7171aaecfae1e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  saveLobbyEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1503861565}
+        m_TargetAssemblyTypeName: SaveSystemCh2, Assembly-CSharp
+        m_MethodName: LogBackLobby
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  restartEvent:
+    m_PersistentCalls:
+      m_Calls: []
   differentScene: 
 --- !u!114 &341451605
 MonoBehaviour:
@@ -5679,6 +5697,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59bb600de5f690d4a82200e1a1ed090e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sceneName: "\u5834\u666F2-2"
   shellText: {fileID: 2100777295}
   riceText: {fileID: 2100777295}
   sugarText: {fileID: 2100777295}
@@ -7429,7 +7448,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 2107514684}
   m_Direction: 2
   m_Value: 1
-  m_Size: 0.9999915
+  m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
