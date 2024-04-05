@@ -7,6 +7,7 @@ using System;
 using System.Text;
 using System.Linq;
 using UnityEngine.XR;
+using UnityEditor.SearchService;
 
 [System.Serializable]
 public class SaveSystem : MonoBehaviour
@@ -33,8 +34,38 @@ public class SaveSystem : MonoBehaviour
         playerName = KeepData.loginName;
         pldata = FileHandler.ReadFromJSON<PlayerData>(filename);
         FILENAME = Application.persistentDataPath + "/playerdatach1.csv";
+
+        //使用者進入第一單元，就紀錄使用者進入了第一單元
+        LogBeginning();
     }
 
+    public void LogBeginning()
+    {
+        //使用者進入第一單元，就紀錄使用者進入了第一單元
+        type = "進入第一單元";
+        Save();
+    }
+
+    /// <summary>
+    /// 訂閱SceneManager的事件，當使用者離開第一單元或是重新遊玩第一單元，就紀錄使用者行為
+    /// </summary>
+    public void LogBackLobby()
+    {
+        //使用者離開第一單元，就紀錄使用者離開了第一單元
+        type = "回到關卡選擇大廳";
+        Save();
+    }
+
+    public void LogRestart()
+    {
+        //使用者重新開始第一單元，就紀錄使用者重新開始了第一單元
+        type = "重新開始第一單元";
+        Save();
+    }
+
+    /// <summary>
+    /// 碰到物件時，紀錄玩家的行為
+    /// </summary>
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "huai")

@@ -30,7 +30,34 @@ public class SaveSystemCh2 : MonoBehaviour
         pldataCh2 = FileHandler.ReadFromJSON<PlayerDataCh2>(filename);
 
         FILEPATH = Application.persistentDataPath + "/" + FILENAME;
+
+        LogBeginning();
     }
+
+    public void LogBeginning()
+    {
+        //使用者進入第二單元，就紀錄使用者進入了第一單元
+        type = "進入第二單元";
+        Save();
+    }
+
+    /// <summary>
+    /// 訂閱SceneManager的事件，當使用者離開第一單元或是重新遊玩第一單元，就紀錄使用者行為
+    /// </summary>
+    public void LogBackLobby()
+    {
+        //使用者離開第一單元，就紀錄使用者離開了第一單元
+        type = "回到關卡選擇大廳";
+        Save();
+    }
+
+    public void LogRestart()
+    {
+        //使用者重新開始第一單元，就紀錄使用者重新開始了第一單元
+        type = "重新開始第一單元";
+        Save();
+    }
+
     public void Save()
     {
         pldataCh2.Add(new PlayerDataCh2(playerName, DateTime.Now.ToString(), type, conversationRecord) { playerName = playerName, playerTime = DateTime.Now.ToString(), playerActionType = type, conversationRecordCh2 = conversationRecord });
