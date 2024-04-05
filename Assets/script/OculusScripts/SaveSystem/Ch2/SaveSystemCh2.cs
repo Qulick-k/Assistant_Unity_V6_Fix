@@ -254,7 +254,7 @@ public class SaveSystemCh2 : MonoBehaviour
     }
     string returnDataRowName()
     {
-        return "Name, Time, ActionType";
+        return "Name, Time, ActionType, 撿甘蔗次數, 玩家對話紀錄";
     }
     private void Update()
     {
