@@ -7697,7 +7697,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8561962399335364913, guid: 4044ab012cbca7d44a1393a09b5086ce, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -0.0038318993
+      value: -0.0040045436
       objectReference: {fileID: 0}
     - target: {fileID: 8561962399335364913, guid: 4044ab012cbca7d44a1393a09b5086ce, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -10483,6 +10483,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1121121817}
     - target: {fileID: 5060659580127763000, guid: 8dab70b5a3c523f4aae986693fac9843, type: 3}
+      propertyPath: npcWords
+      value: "\u548C\u5834\u666F2-4\u7684\u7CFB\u7D71Npc\u5C0D\u8A71"
+      objectReference: {fileID: 0}
+    - target: {fileID: 5060659580127763000, guid: 8dab70b5a3c523f4aae986693fac9843, type: 3}
       propertyPath: Mission3Com
       value: 
       objectReference: {fileID: 1138011941}
@@ -10518,6 +10522,34 @@ PrefabInstance:
       propertyPath: CallObjectAnimatorOrCallMethodOrCheckTag
       value: 
       objectReference: {fileID: 1547717668}
+    - target: {fileID: 5060659580127763000, guid: 8dab70b5a3c523f4aae986693fac9843, type: 3}
+      propertyPath: saveNpc_DialogMissionEvent.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5060659580127763000, guid: 8dab70b5a3c523f4aae986693fac9843, type: 3}
+      propertyPath: saveNpc_DialogMissionEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5060659580127763000, guid: 8dab70b5a3c523f4aae986693fac9843, type: 3}
+      propertyPath: saveNpc_DialogMissionEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1121121828}
+    - target: {fileID: 5060659580127763000, guid: 8dab70b5a3c523f4aae986693fac9843, type: 3}
+      propertyPath: saveNpc_DialogMissionEvent.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5060659580127763000, guid: 8dab70b5a3c523f4aae986693fac9843, type: 3}
+      propertyPath: saveNpc_DialogMissionEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: LogMissionComplete
+      objectReference: {fileID: 0}
+    - target: {fileID: 5060659580127763000, guid: 8dab70b5a3c523f4aae986693fac9843, type: 3}
+      propertyPath: saveNpc_DialogMissionEvent.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: SaveSystemCh2, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5060659580127763000, guid: 8dab70b5a3c523f4aae986693fac9843, type: 3}
+      propertyPath: saveNpc_DialogMissionEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 8117589533734312261, guid: 8dab70b5a3c523f4aae986693fac9843, type: 3}
       propertyPath: m_Name
       value: Dialog2-3

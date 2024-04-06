@@ -7,7 +7,11 @@ using UnityEngine.UI;
 
 public class DialogManager2_3 : MonoBehaviour
 {
-    //使用者每按一次語音時，當saveMaterialMissionEvent有訂閱者的話，就呼叫訂閱者的LogMissionComplete()記錄使用者完成什麼任務
+    //使用者每和NPC對話，當saveNPC_DialogMissionEvent有訂閱者的話，就呼叫訂閱者的LogMissionComplete()記錄使用者完成什麼對話
+    public UnityEvent<string> saveNpc_DialogMissionEvent;
+    [SerializeField] private string npcWords;
+
+    //使用者每完成任務，當saveMaterialMissionEvent有訂閱者的話，就呼叫訂閱者的LogMissionComplete()記錄使用者完成什麼任務
     public UnityEvent<string> saveMaterialMissionEvent;
 
     public UnityEngine.UI.Text actorName;
@@ -80,11 +84,13 @@ public class DialogManager2_3 : MonoBehaviour
                 Mission3.text = "<color=green>✓ 3.認識各個材料的功用(找原住民對話收集材料)</color>";
                 Mission4.color = new Color(Mission4.color.r, Mission4.color.g, Mission4.color.b, 1);
                 saveMaterialMissionEvent.Invoke("成功完成，3.認識各個材料的功用(找原住民對話收集材料)");
+                saveNpc_DialogMissionEvent.Invoke(npcWords);
             }
             else
             {
                 Mission3Com.text = "<color=green>✓ 3.認識各個材料的功用(找原住民對話收集材料)</color>";
                 saveMaterialMissionEvent.Invoke("成功完成，3.認識各個材料的功用(找原住民對話收集材料)");
+                saveNpc_DialogMissionEvent.Invoke(npcWords);
             }
             
 

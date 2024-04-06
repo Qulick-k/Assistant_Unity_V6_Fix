@@ -3,9 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.Events;
 
 public class DialogManager2_1 : MonoBehaviour
 {
+    //使用者每和系統竹簡對話，當saveSystemDialogMissionEvent有訂閱者的話，就呼叫訂閱者的LogMissionComplete()記錄使用者完成什麼任務
+    public UnityEvent<string> saveSystemDialogMissionEvent;
+
     public UnityEngine.UI.Text actorName;
     public UnityEngine.UI.Text messageText;
     public RectTransform backgroundBox;
@@ -80,6 +84,7 @@ public class DialogManager2_1 : MonoBehaviour
                 DB.SetActive(false);
                 Mission1.text = "<color=green>✓ 1.認識建造普羅民遮城的背景(前往竹簡)</color>";
                 Mission2.color = new Color(Mission2.color.r, Mission2.color.g, Mission2.color.b, 1);
+                saveSystemDialogMissionEvent.Invoke("成功完成，1.認識建造普羅民遮城的背景(前往竹簡)");
             }
             else
             {
@@ -87,6 +92,7 @@ public class DialogManager2_1 : MonoBehaviour
                 porTal.SetActive(true);
                 DB.SetActive(false);
                 Mission1Com.text = "<color=green>✓ 1.認識建造普羅民遮城的背景(前往竹簡)</color>";
+                saveSystemDialogMissionEvent.Invoke("成功完成，1.認識建造普羅民遮城的背景(前往竹簡)");
             }
             
             

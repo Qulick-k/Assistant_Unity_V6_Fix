@@ -3,9 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.Events;
 
 public class DialogManager2_2 : MonoBehaviour
 {
+    //使用者每和NPC對話，當saveNPC_DialogMissionEvent有訂閱者的話，就呼叫訂閱者的LogMissionComplete()記錄使用者完成什麼對話
+    public UnityEvent<string> saveNpc_DialogMissionEvent;
+    [SerializeField] private string npcWords;
+
     public UnityEngine.UI.Text actorName;
     public UnityEngine.UI.Text messageText;
     public RectTransform backgroundBox;
@@ -98,8 +103,9 @@ public class DialogManager2_2 : MonoBehaviour
                 }
                 
             }
-            
-            
+            saveNpc_DialogMissionEvent.Invoke(npcWords);
+
+
             //porTal.SetActive(true);
 
             //if (PL.tag == "Player")
@@ -107,7 +113,7 @@ public class DialogManager2_2 : MonoBehaviour
             //    DB.SetActive(false);
             //    Mission1.text = "<color=green>1.前往黃色驚嘆號 ?</color>";
             //}
-            
+
         }
     }
 

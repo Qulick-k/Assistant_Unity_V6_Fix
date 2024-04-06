@@ -5655,6 +5655,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 165387130}
+  - {fileID: 1189921706}
   - {fileID: 1580022374}
   - {fileID: 1167712836}
   - {fileID: 1488638533}
@@ -5961,7 +5962,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1084022546}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &1167712837
 BoxCollider:
@@ -6095,6 +6096,80 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4279449019447086, guid: eded051879df4c147b9010199d240258, type: 3}
   m_PrefabInstance: {fileID: 1184331144}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1189921705
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1189921706}
+  - component: {fileID: 1189921708}
+  - component: {fileID: 1189921707}
+  m_Layer: 0
+  m_Name: PortalArea
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1189921706
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1189921705}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 69.4, y: -52.1, z: 303}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1084022546}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1189921707
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1189921705}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 20a0d2f0fcde78c46a2eae9507034559, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  saveAreaColliderEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 9208721711920238823}
+        m_TargetAssemblyTypeName: SaveSystemCh2, Assembly-CSharp
+        m_MethodName: LogMissionComplete
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  areaName: "\u9032\u5165\u50B3\u9001\u9580\u5340\u57DF"
+--- !u!65 &1189921708
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1189921705}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 42.115578, y: 64.14252, z: 58.984215}
+  m_Center: {x: 1.6280937, y: 12.441147, z: -3.0818367}
 --- !u!1001 &1201961972
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7056,7 +7131,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1084022546}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &1488638534
 BoxCollider:
@@ -7510,7 +7585,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1084022546}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &1580022375
 BoxCollider:
@@ -8165,6 +8240,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db2723b7bea66834fa34d1e679f26dbe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  saveSystemDialogMissionEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 9208721711920238823}
+        m_TargetAssemblyTypeName: SaveSystemCh2, Assembly-CSharp
+        m_MethodName: LogMissionComplete
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   actorName: {fileID: 954875415}
   messageText: {fileID: 670701789}
   backgroundBox: {fileID: 1714851887}
@@ -9572,7 +9662,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1084022546}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &1902103171
 BoxCollider:
