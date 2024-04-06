@@ -1,9 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class ObjectAudiosManager : MonoBehaviour
 {
+    ///使用者每按一次語音時，當saveAudioEvent有訂閱者的話，就呼叫訂閱者的LogMissionComplete()記錄使用了什麼語音
+    public UnityEvent<string> saveAudioEvent;
+
     [SerializeField] private AudioSource[] OA_List;
 
     private int OA_index;
@@ -21,24 +25,31 @@ public class ObjectAudiosManager : MonoBehaviour
         {
             case 1: 
                 OA_List[0].Play();
+                saveAudioEvent.Invoke("成功播放，1.郭懷一的小人偶語音");
                 break;
             case 2:
                 OA_List[1].Play();
+                saveAudioEvent.Invoke("成功播放，2.甘蔗語音");
                 break;
             case 3:
                 OA_List[2].Play();
+                saveAudioEvent.Invoke("成功播放，3.郭懷一的筆記文件語音");
                 break;
             case 4:
                 OA_List[3].Play();
+                saveAudioEvent.Invoke("成功播放，4.紅磚石語音");
                 break;
             case 5:
                 OA_List[4].Play();
+                saveAudioEvent.Invoke("成功播放，5.糯米漿語音");
                 break;
             case 6:
                 OA_List[5].Play();
+                saveAudioEvent.Invoke("成功播放，6.蚵殼灰語音");
                 break;
             case 7:
                 OA_List[6].Play();
+                saveAudioEvent.Invoke("成功播放，7.糖水語音");
                 break;
             case 8:
                 OA_List[7].Play();

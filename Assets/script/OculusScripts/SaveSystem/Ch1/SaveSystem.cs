@@ -39,11 +39,19 @@ public class SaveSystem : MonoBehaviour
         LogBeginning();
     }
 
+    //重整type和conversationRecord的文字
+    void ResetType_ConversationRecord()
+    {
+        type = "";
+        conversationRecord = "";
+    }
+
     public void LogBeginning()
     {
         //使用者進入第一單元，就紀錄使用者進入了第一單元
         type = "進入第一單元";
         Save();
+
     }
 
     /// <summary>
@@ -60,6 +68,19 @@ public class SaveSystem : MonoBehaviour
     {
         //使用者重新開始第一單元，就紀錄使用者重新開始了第一單元
         type = "重新開始第一單元";
+        Save();
+    }
+
+    //紀錄完成了哪項任務
+    public void LogMissionComplete(string Mission)
+    {
+        type = Mission;
+        Save();
+    }
+
+    public void LogUserLookBoard()
+    {
+        type = "使用者查看了操作說明版";
         Save();
     }
 
@@ -146,6 +167,9 @@ public class SaveSystem : MonoBehaviour
         pldata.Add(new PlayerData(playerName, DateTime.Now.ToString(), type, pickupTimes, conversationRecord)); //, conversationRecord  補上對話紀錄的引數
         FileHandler.SaveToJSON<PlayerData>(pldata, filename);
         WriteToCsv(FILENAME, pldata);
+
+        //上面存完檔後，重設type和conversationRecord的文字為""。
+        ResetType_ConversationRecord();
     }
 
 

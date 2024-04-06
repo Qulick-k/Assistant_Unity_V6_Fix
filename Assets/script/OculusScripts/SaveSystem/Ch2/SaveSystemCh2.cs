@@ -69,12 +69,22 @@ public class SaveSystemCh2 : MonoBehaviour
         Save();
     }
 
+    //重整type和conversationRecord的文字
+    void ResetType_ConversationRecord()
+    {
+        type = "";
+        conversationRecord = "";
+    }
+
     public void Save()
     {
         pldataCh2.Add(new PlayerDataCh2(playerName, DateTime.Now.ToString(), type, conversationRecord) { playerName = playerName, playerTime = DateTime.Now.ToString(), playerActionType = type, conversationRecordCh2 = conversationRecord });
         //pldataCh2.Add(new PlayerDataCh2(playerName, DateTime.Now.ToString(), type));
         FileHandler.SaveToJSON<PlayerDataCh2>(pldataCh2, filename);
         WriteToCsv(FILEPATH, pldataCh2);
+
+        //上面存完檔後，重設type和conversationRecord的文字為""。
+        ResetType_ConversationRecord();
     }
     private void OnTriggerEnter(Collider other)
     {

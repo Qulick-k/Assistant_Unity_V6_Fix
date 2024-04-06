@@ -3,9 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.Events;
 
 public class DialogManager : MonoBehaviour
 {
+    //每完成一項任務時，當saveMissionEvent有訂閱者的話，就呼叫訂閱者記錄任務完成
+    public UnityEvent<string> saveMissionEvent;
+
     public UnityEngine.UI.Text actorName;
     public UnityEngine.UI.Text messageText;
     public RectTransform backgroundBox;
@@ -78,7 +82,7 @@ public class DialogManager : MonoBehaviour
             CallObjectAnimatorOrCallMethodOrCheckTag.GetComponent<NPC_animate>().BackAnimate(); //呼叫指定物件改回待機動畫的方法
             CallObjectAnimatorOrCallMethodOrCheckTag.GetComponent<RandomPathTrolling>().SetWalkTrue(); //呼叫RandomPathTrolling腳本的方法，允許NPC移動
 
-
+            ///如果要找任務顯示文字是 2.了解荷蘭開墾台灣的規劃(尋找甘蔗)的話，請去找ChangeTextColor腳本
             ///在這裡分出綜合型跟循序型的差別
             ///如果是循序型，就每完成一個任務就顯示下一個任務
             if (KeepData.guideSwitch == true)
@@ -92,6 +96,7 @@ public class DialogManager : MonoBehaviour
                         Mission1.text = "<color=green>✓ 1.認識抗荷的背景(前往竹簡)</color>";
                         Mission2.color = new Color(Mission2.color.r, Mission2.color.g, Mission2.color.b, 1);          //讓任務2的顏色從透明變成原本的顏色
                                                                                                                       //Mission1.color = Color.green;
+                        saveMissionEvent.Invoke("成功完成，1.認識抗荷的背景(前往竹簡)");
                     }
                     DB.SetActive(false);                    
                 }
@@ -104,6 +109,7 @@ public class DialogManager : MonoBehaviour
                             DB.SetActive(false);
                             Mission1.text = "<color=green>✓ 1.認識抗荷的背景(前往竹簡)</color>";
                             Mission2.color = new Color(Mission2.color.r, Mission2.color.g, Mission2.color.b, 1);          //讓任務2的顏色從透明變成原本的顏色
+                            saveMissionEvent.Invoke("成功完成，1.認識抗荷的背景(前往竹簡)");
                         }
                         DB.SetActive(false);
                     }
@@ -114,6 +120,7 @@ public class DialogManager : MonoBehaviour
                         Mission3.text = "<color=green>✓ 3.蔗糖是荷蘭人重要的經濟來源(找到荷蘭人並繳交甘蔗)</color>";
                         //讓任務4的顏色從透明變成原本的顏色
                         Mission4.color = new Color(Mission4.color.r, Mission4.color.g, Mission4.color.b, 1);
+                        saveMissionEvent.Invoke("成功完成，3.蔗糖是荷蘭人重要的經濟來源(找到荷蘭人並繳交甘蔗)");
                     }
                 }
                 else if (PL.tag == "PlayerWithNerthland_A")
@@ -126,6 +133,7 @@ public class DialogManager : MonoBehaviour
                             DB.SetActive(false);
                             Mission1.text = "<color=green>✓ 1.認識抗荷的背景(前往竹簡)</color>";
                             Mission2.color = new Color(Mission2.color.r, Mission2.color.g, Mission2.color.b, 1);          //讓任務2的顏色從透明變成原本的顏色
+                            saveMissionEvent.Invoke("成功完成，1.認識抗荷的背景(前往竹簡)");
                         }
                         DB.SetActive(false);
                         //PlayerTagDontChange = false;
@@ -139,6 +147,7 @@ public class DialogManager : MonoBehaviour
                         //讓任務5的顏色從透明變成原本的顏色
                         Mission5.color = new Color(Mission5.color.r, Mission5.color.g, Mission5.color.b, 1);
                         CallObjectAnimatorOrCallMethodOrCheckTag.GetComponent<HuaiGivePaper>().SetPaperActive();
+                        saveMissionEvent.Invoke("成功完成，4.認識郭懷一擔任使節的原由、郭懷一抗荷蘭的成因(獲得文件)");
                     }
                 }
                 else if (PL.tag == "PlayerWithGou")
@@ -151,6 +160,7 @@ public class DialogManager : MonoBehaviour
                             DB.SetActive(false);
                             Mission1.text = "<color=green>✓ 1.認識抗荷的背景(前往竹簡)</color>";
                             Mission2.color = new Color(Mission2.color.r, Mission2.color.g, Mission2.color.b, 1);          //讓任務2的顏色從透明變成原本的顏色
+                            saveMissionEvent.Invoke("成功完成，1.認識抗荷的背景(前往竹簡)");
                         }
                         DB.SetActive(false);
                     }
@@ -159,6 +169,7 @@ public class DialogManager : MonoBehaviour
                         //碰到的人如果是荷蘭人B的話，對話窗關閉+更新任務清單+隔兩秒顯示出單元總結畫面
                         DB.SetActive(false);
                         Mission5.text = "<color=green>✓ 5.荷蘭如何治理與處置反抗民眾(找藍色衣服荷蘭人的對話)\r\n</color>";
+                        saveMissionEvent.Invoke("成功完成，5.荷蘭如何治理與處置反抗民眾(找藍色衣服荷蘭人的對話)");
                         EndCanvasManager.EndCanvas();
                     }
                 }
@@ -176,6 +187,7 @@ public class DialogManager : MonoBehaviour
                             //spawnBool = true;
                             Mission1Com.text = "<color=green>✓ 1.認識抗荷的背景(前往竹簡)</color>";
                             Mission1Com.color = new Color(Mission1Com.color.r, Mission1Com.color.g, Mission1Com.color.b, 1);          //讓任務1的顏色從透明變成任務完成的顏色
+                            saveMissionEvent.Invoke("成功完成，1.認識抗荷的背景(前往竹簡)");
                         }
                         DB.SetActive(false);
                         break;
@@ -187,6 +199,7 @@ public class DialogManager : MonoBehaviour
                                 DB.SetActive(false);
                                 Mission1Com.text = "<color=green>✓ 1.認識抗荷的背景(前往竹簡)</color>";
                                 Mission1Com.color = new Color(Mission1Com.color.r, Mission1Com.color.g, Mission1Com.color.b, 1);          //讓任務1的顏色從透明變成任務完成的顏色
+                                saveMissionEvent.Invoke("成功完成，1.認識抗荷的背景(前往竹簡)");
                             }
                             DB.SetActive(false);
                         }
@@ -196,6 +209,7 @@ public class DialogManager : MonoBehaviour
                             PL.tag = "PlayerWithNerthland_A";
                             Mission3Com.text = "<color=green>✓ 3.蔗糖是荷蘭人重要的經濟來源(找到荷蘭人並繳交甘蔗)</color>";
                             Mission3Com.color = new Color(Mission3Com.color.r, Mission3Com.color.g, Mission3Com.color.b, 1);          //讓任務3的顏色從透明變成任務完成的顏色
+                            saveMissionEvent.Invoke("成功完成，3.蔗糖是荷蘭人重要的經濟來源(找到荷蘭人並繳交甘蔗)");
                         }
                         break;
                     case "PlayerWithNerthland_A":
@@ -207,6 +221,7 @@ public class DialogManager : MonoBehaviour
                                 DB.SetActive(false);
                                 Mission1Com.text = "<color=green>✓ 1.認識抗荷的背景(前往竹簡)</color>";
                                 Mission1Com.color = new Color(Mission1Com.color.r, Mission1Com.color.g, Mission1Com.color.b, 1);          //讓任務1的顏色從透明變成任務完成的顏色
+                                saveMissionEvent.Invoke("成功完成，1.認識抗荷的背景(前往竹簡)");
                             }
                             DB.SetActive(false);
                             //PlayerTagDontChange = false;
@@ -219,6 +234,7 @@ public class DialogManager : MonoBehaviour
                             Mission4Com.text = "<color=green>✓ 4.認識郭懷一擔任使節的原由、郭懷一抗荷蘭的成因(獲得文件)</color>";
                             Mission4Com.color = new Color(Mission4Com.color.r, Mission4Com.color.g, Mission4Com.color.b, 1);          //讓任務4的顏色從透明變成任務完成的顏色
                             CallObjectAnimatorOrCallMethodOrCheckTag.GetComponent<HuaiGivePaper>().SetPaperActive();
+                            saveMissionEvent.Invoke("成功完成，4.認識郭懷一擔任使節的原由、郭懷一抗荷蘭的成因(獲得文件)");
                         }
                         break;
                     case "PlayerWithGou":
@@ -231,6 +247,7 @@ public class DialogManager : MonoBehaviour
                                 //spawnBool = true;
                                 Mission1Com.text = "<color=green>✓ 1.認識抗荷的背景(前往竹簡)</color>";
                                 Mission1Com.color = new Color(Mission1Com.color.r, Mission1Com.color.g, Mission1Com.color.b, 1);          //讓任務1的顏色從透明變成任務完成的顏色
+                                saveMissionEvent.Invoke("成功完成，1.認識抗荷的背景(前往竹簡)");
                             }
                             DB.SetActive(false);
                         }
@@ -240,7 +257,9 @@ public class DialogManager : MonoBehaviour
                             DB.SetActive(false);
                             Mission5Com.text = "<color=green>✓ 5.荷蘭如何治理與處置反抗民眾(找藍色衣服荷蘭人的對話)\r\n</color>";
                             Mission5Com.color = new Color(Mission5Com.color.r, Mission5Com.color.g, Mission5Com.color.b, 1);          //讓任務5的顏色從透明變成任務完成的顏色
+                            saveMissionEvent.Invoke("成功完成，5.荷蘭如何治理與處置反抗民眾(找藍色衣服荷蘭人的對話)");
                             EndCanvasManager.EndCanvas();
+                            
                         }
                         break;
                 }
