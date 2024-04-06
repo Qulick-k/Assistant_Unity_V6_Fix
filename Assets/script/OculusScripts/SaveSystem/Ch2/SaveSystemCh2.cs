@@ -76,6 +76,20 @@ public class SaveSystemCh2 : MonoBehaviour
         conversationRecord = "";
     }
 
+    //紀錄完成了哪項任務
+    public void LogMissionComplete(string Mission)
+    {
+        type = Mission;
+        Save();
+    }
+
+    //在操作說明板的Select Event中呼叫此方法，紀錄使用者查看了操作說明板
+    public void LogUserLookBoard()
+    {
+        type = "使用者查看了操作說明版";
+        Save();
+    }
+
     public void Save()
     {
         pldataCh2.Add(new PlayerDataCh2(playerName, DateTime.Now.ToString(), type, conversationRecord) { playerName = playerName, playerTime = DateTime.Now.ToString(), playerActionType = type, conversationRecordCh2 = conversationRecord });
