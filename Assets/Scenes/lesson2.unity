@@ -15190,6 +15190,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 433947f38a1dc1a49b76c9943e18e671, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  saveNpc_DialogMissionEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8453822172156957519}
+        m_TargetAssemblyTypeName: SaveSystem, Assembly-CSharp
+        m_MethodName: LogMissionComplete
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  npcWords: "\u548C\u88AB\u8377\u862D\u4EBA\u903C\u8CB7\u57F7\u7167\u4E26\u4E14\u63D0\u793A\u8377\u862D\u4EBA\u9577\u5B98\u8863\u670D\u984F\u8272\u7684\u6F01\u592BNPC\u5C0D\u8A71"
   saveMissionEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -16136,6 +16152,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 433947f38a1dc1a49b76c9943e18e671, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  saveNpc_DialogMissionEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8453822172156957519}
+        m_TargetAssemblyTypeName: SaveSystem, Assembly-CSharp
+        m_MethodName: LogMissionComplete
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  npcWords: "\u548C\u63D0\u793A\u6536\u7518\u8517\u8377\u862D\u4EBA\u5916\u89C0\u7684NPC\u5C0D\u8A71"
   saveMissionEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -16491,6 +16523,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 433947f38a1dc1a49b76c9943e18e671, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  saveNpc_DialogMissionEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8453822172156957519}
+        m_TargetAssemblyTypeName: SaveSystem, Assembly-CSharp
+        m_MethodName: LogMissionComplete
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  npcWords: "\u548C\u88AB\u8377\u862D\u4EBA\u6536\u4EBA\u982D\u7A05\u4E26\u4E14\u63D0\u793A\u90ED\u61F7\u4E00\u6703\u5E6B\u52A9\u4EBA\u7684NPC\u5C0D\u8A71"
   saveMissionEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -18667,6 +18715,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 433947f38a1dc1a49b76c9943e18e671, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  saveNpc_DialogMissionEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  npcWords: 
   saveMissionEvent:
     m_PersistentCalls:
       m_Calls:
@@ -19113,6 +19165,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 433947f38a1dc1a49b76c9943e18e671, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  saveNpc_DialogMissionEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8453822172156957519}
+        m_TargetAssemblyTypeName: SaveSystem, Assembly-CSharp
+        m_MethodName: LogMissionComplete
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  npcWords: "\u548C\u88AB\u8377\u862D\u4EBA\u8981\u6C42\u7E73\u7A05\u4E26\u4E14\u63D0\u793A\u7518\u8517\u7530\u4F4D\u7F6E\u7684\u8FB2\u5834\u5DE5\u4EBANPC\u5C0D\u8A71"
   saveMissionEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -19539,6 +19607,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 433947f38a1dc1a49b76c9943e18e671, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  saveNpc_DialogMissionEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  npcWords: 
   saveMissionEvent:
     m_PersistentCalls:
       m_Calls:
@@ -20446,6 +20518,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 433947f38a1dc1a49b76c9943e18e671, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  saveNpc_DialogMissionEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  npcWords: 
   saveMissionEvent:
     m_PersistentCalls:
       m_Calls:
@@ -43206,6 +43282,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 433947f38a1dc1a49b76c9943e18e671, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  saveNpc_DialogMissionEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  npcWords: 
   saveMissionEvent:
     m_PersistentCalls:
       m_Calls:
@@ -56649,6 +56729,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 433947f38a1dc1a49b76c9943e18e671, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  saveNpc_DialogMissionEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8453822172156957519}
+        m_TargetAssemblyTypeName: SaveSystem, Assembly-CSharp
+        m_MethodName: LogMissionComplete
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  npcWords: "\u548C\u88AB\u8377\u862D\u4EBA\u6536\u7A05\u4E26\u4E14\u63D0\u793A\u90ED\u61F7\u4E00\u4F4D\u7F6E\u7684NPC\u5C0D\u8A71"
   saveMissionEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -66538,6 +66634,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6eb899aedb6c724e985883a0634f345, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  saveCraftMissionEvent:
+    m_PersistentCalls:
+      m_Calls: []
   placeItemsAreaBoxCollider: {fileID: 1460469546}
   craftingRecipeSOList:
   - {fileID: 11400000, guid: c0b050d53b8401b448b7475bce6a7710, type: 2}

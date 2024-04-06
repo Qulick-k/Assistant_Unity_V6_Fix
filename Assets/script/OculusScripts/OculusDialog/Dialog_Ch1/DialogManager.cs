@@ -7,6 +7,10 @@ using UnityEngine.Events;
 
 public class DialogManager : MonoBehaviour
 {
+    //使用者每和NPC對話，當saveNPC_DialogMissionEvent有訂閱者的話，就呼叫訂閱者的LogMissionComplete()記錄使用者完成什麼對話
+    public UnityEvent<string> saveNpc_DialogMissionEvent;
+    [SerializeField] private string npcWords;
+
     //每完成一項任務時，當saveMissionEvent有訂閱者的話，就呼叫訂閱者記錄任務完成
     public UnityEvent<string> saveMissionEvent;
 
@@ -81,6 +85,10 @@ public class DialogManager : MonoBehaviour
         else {
             CallObjectAnimatorOrCallMethodOrCheckTag.GetComponent<NPC_animate>().BackAnimate(); //呼叫指定物件改回待機動畫的方法
             CallObjectAnimatorOrCallMethodOrCheckTag.GetComponent<RandomPathTrolling>().SetWalkTrue(); //呼叫RandomPathTrolling腳本的方法，允許NPC移動
+
+            //是一般NPC的話，就訂閱saveNpc_DialogMissionEvent，如果是荷蘭人或是郭懷一，就不要訂閱
+            saveNpc_DialogMissionEvent.Invoke(npcWords);
+
 
             ///如果要找任務顯示文字是 2.了解荷蘭開墾台灣的規劃(尋找甘蔗)的話，請去找ChangeTextColor腳本
             ///在這裡分出綜合型跟循序型的差別
