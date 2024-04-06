@@ -5,10 +5,14 @@ using UnityEngine;
 using UnityEngine.UI;
 using System;
 using UnityEngine.SceneManagement;
+using UnityEngine.Events;
 
 [System.Serializable]
 public class CraftingSystem : MonoBehaviour
 {
+    //使用者每按一次語音時，當saveCraftMissionEvent有訂閱者的話，就呼叫訂閱者的LogMissionComplete()記錄使用者完成哪個任務
+    public UnityEvent<string> saveCraftMissionEvent;
+
     [SerializeField] private BoxCollider placeItemsAreaBoxCollider;
     [SerializeField] private List<CraftingRecipeSO> craftingRecipeSOList;
     [SerializeField] private Transform itemSpawnPoint;
@@ -86,10 +90,12 @@ public class CraftingSystem : MonoBehaviour
             {
                 Mission4.text = "<color=green>✓ 4.了解哪些組合材料可以合成(將材料合成)</color>";
                 Mission5.color = new Color(Mission5.color.r, Mission5.color.g, Mission5.color.b, 1);
+                saveCraftMissionEvent.Invoke("成功完成，4.了解哪些組合材料可以合成(將材料合成)");
             }
             else
             {
                 Mission4Com.text = "<color=green>✓ 4.了解哪些組合材料可以合成(將材料合成)</color>";
+                saveCraftMissionEvent.Invoke("成功完成，4.了解哪些組合材料可以合成(將材料合成)");
             }
 
             table.GetComponent<SaveSystemCh2>().type = "合成成功";
