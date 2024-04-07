@@ -4984,6 +4984,80 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 8117589533734312261, guid: 8dab70b5a3c523f4aae986693fac9843, type: 3}
   m_PrefabInstance: {fileID: 1451769416}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &780960018
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 780960019}
+  - component: {fileID: 780960021}
+  - component: {fileID: 780960020}
+  m_Layer: 0
+  m_Name: HerChenTai
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &780960019
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 780960018}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -9.77, y: 0, z: -18.53}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1025388200}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &780960020
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 780960018}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 20a0d2f0fcde78c46a2eae9507034559, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  saveAreaColliderEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 342534919}
+        m_TargetAssemblyTypeName: SaveSystemCh2, Assembly-CSharp
+        m_MethodName: LogMissionComplete
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  areaName: "\u9032\u5165\u5408\u6210\u53F0\u7684\u5340\u57DF"
+--- !u!65 &780960021
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 780960018}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 4.484741, y: 0.88517, z: 4.2610474}
+  m_Center: {x: 0.3357544, y: -0.05741501, z: 0.15988159}
 --- !u!1 &781065669
 GameObject:
   m_ObjectHideFlags: 0
@@ -6793,6 +6867,7 @@ Transform:
   - {fileID: 882823725}
   - {fileID: 454058387}
   - {fileID: 1148074562}
+  - {fileID: 780960019}
   m_Father: {fileID: 0}
   m_RootOrder: 22
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
