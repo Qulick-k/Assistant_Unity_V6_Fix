@@ -70300,6 +70300,34 @@ PrefabInstance:
       propertyPath: m_InteractionManager
       value: 
       objectReference: {fileID: 8453822172605002800}
+    - target: {fileID: 7092405487578002137, guid: 93979601c35cc474ea93693fd6e66c8f, type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7092405487578002137, guid: 93979601c35cc474ea93693fd6e66c8f, type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7092405487578002137, guid: 93979601c35cc474ea93693fd6e66c8f, type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 8453822172156957519}
+    - target: {fileID: 7092405487578002137, guid: 93979601c35cc474ea93693fd6e66c8f, type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7092405487578002137, guid: 93979601c35cc474ea93693fd6e66c8f, type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: DollSelect
+      objectReference: {fileID: 0}
+    - target: {fileID: 7092405487578002137, guid: 93979601c35cc474ea93693fd6e66c8f, type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: SaveSystem, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7092405487578002137, guid: 93979601c35cc474ea93693fd6e66c8f, type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 93979601c35cc474ea93693fd6e66c8f, type: 3}
 --- !u!137 &2421595211230626019

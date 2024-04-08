@@ -102,6 +102,13 @@ public class SaveSystem : MonoBehaviour
             Save();
             
         }
+        else if (other.gameObject.tag == "People_Blue")
+        {
+            type = "和藍色荷蘭人A長官說話";
+
+            Save();
+
+        }
         else if (other.gameObject.tag == "green_stranger")
         {
             type = "和綠色衣服男子對話";
@@ -159,8 +166,15 @@ public class SaveSystem : MonoBehaviour
     {
         type = "拾取文件";
         Save();
-        
     }
+
+    public void DollSelect()
+    {
+        type = "撿取郭懷一人偶";
+        Save();
+
+    }
+
     public void Save()
     {
         pldata.Add(new PlayerData(playerName, DateTime.Now.ToString(), type, pickupTimes, conversationRecord)); //, conversationRecord  補上對話紀錄的引數

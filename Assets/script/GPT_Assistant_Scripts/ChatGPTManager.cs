@@ -83,7 +83,7 @@ public class ChatGPTManager : MonoBehaviour
         }
         else
         {
-            return "你是一位歷史助教，專門使用循序漸進的條列式問題來回答學生的提問";
+            return "你是一位歷史助教，專門使用循序漸進的條列式問題來回答學生的提問，以下是學生的問題:";
         }
         //string instructions = "你是一位歷史助教專門運用蘇格拉底式的質疑方式來引導學生深入思考歷史問題，以下是學生的問題:";
         //return instructions;
