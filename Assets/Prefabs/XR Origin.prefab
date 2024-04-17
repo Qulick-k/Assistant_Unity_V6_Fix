@@ -2914,6 +2914,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ca78dd7bf65b2840947b04574eda92b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  saveMissionEventCh1_2:
+    m_PersistentCalls:
+      m_Calls: []
   sugarTable: {fileID: 0}
   Mission3: {fileID: 0}
 --- !u!1 &3752206844513134950
