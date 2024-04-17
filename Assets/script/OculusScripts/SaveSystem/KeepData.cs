@@ -9,6 +9,6 @@ public class KeepData : MonoBehaviour
 
     private void Start()
     {
-        guideSwitch = true;        // 預設為循序型
+        guideSwitch = false;        // 預設為綜合型
     }
 }
